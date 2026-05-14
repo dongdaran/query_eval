@@ -14,12 +14,14 @@ class BaseEQGenerator(ABC):
     def __init__(
         self,
         batch_size: int = 10,
-        max_tokens: int = 100,
-        temperature: float = 0.7,
+        max_tokens: int = 256,
+        temperature: float = 0.35,
+        top_p: float = 0.9,
     ) -> None:
         self.batch_size = batch_size
         self.max_tokens = max_tokens
         self.temperature = temperature
+        self.top_p = top_p
 
     @abstractmethod
     def _generate_single(

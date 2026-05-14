@@ -6,6 +6,11 @@ dataset:
   streaming: false         # true: 실시간 스트리밍(테스트) / false: 로컬 다운로드 후 매핑(실전용)
   samples_per_class: "all"
 
+model:
+  temperature: 0.35
+  top_p: 0.9
+  max_tokens: 256
+
 models:
   - name: "laion"
     type: "huggingface" # HF automated load

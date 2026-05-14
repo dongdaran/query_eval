@@ -15,10 +15,11 @@ class GPTEQGenerator(BaseEQGenerator):
         model: str = "gpt-5.4-mini",
         api_key: str | None = None,
         batch_size: int = 10,
-        max_tokens: int = 100,
-        temperature: float = 0.7,
+        max_tokens: int = 256,
+        temperature: float = 0.35,
+        top_p: float = 0.9,
     ) -> None:
-        super().__init__(batch_size, max_tokens, temperature)
+        super().__init__(batch_size, max_tokens, temperature, top_p)
         self.model = model
         self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
         self._client: OpenAI | None = None
@@ -45,6 +46,7 @@ class GPTEQGenerator(BaseEQGenerator):
             ],
             max_completion_tokens=self.max_tokens,
             temperature=self.temperature,
+            top_p=self.top_p,
             n=1,
         )
         return response.choices[0].message.content.strip()

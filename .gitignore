@@ -58,3 +58,4 @@ input/mecat/json_files/
 .codex
 input/mecat/flac_files.zip
 input/mecat/*.zip
+output/

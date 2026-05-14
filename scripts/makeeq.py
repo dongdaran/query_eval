@@ -207,7 +207,7 @@ def main() -> None:
         "--captions-path",
         dest="captions_path",
         required=True,
-        help="Path to the caption CSV, or a MECAT JSON directory when --dataset mecat.",
+        help="Path to the caption CSV, or a MECAT JSON directory/JSONL file when --dataset mecat.",
     )
     parser.add_argument("--output-dir", required=True, help="Directory for per-type EQ JSONL files")
     parser.add_argument(
@@ -228,9 +228,10 @@ def main() -> None:
     source_model = model_config.get("source_model", "gpt-5.4-mini")
     regen_model = model_config.get("regen_model", "gpt-5.4-mini")
     backend = model_config.get("backend", "gpt")
-    temperature = model_config.get("temperature", 0.7)
+    temperature = model_config.get("temperature", 0.35)
     batch_size = model_config.get("batch_size", 2)
-    max_tokens = model_config.get("max_tokens", 100)
+    max_tokens = model_config.get("max_tokens", 256)
+    top_p = model_config.get("top_p", 0.9)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -263,6 +264,7 @@ def main() -> None:
         batch_size=batch_size,
         max_tokens=max_tokens,
         temperature=temperature,
+        top_p=top_p,
     )
 
     outputs_by_type: dict[QueryType, list[QueryResult]] = {}
