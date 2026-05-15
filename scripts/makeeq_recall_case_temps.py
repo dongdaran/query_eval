@@ -39,9 +39,14 @@ DEFAULT_TEMPERATURES: tuple[float, ...] = (
 )
 
 DEFAULT_MODELS: tuple[str, ...] = (
-    "gpt-5.4-2026-03-05",
-    "gpt-5.4-mini-2026-03-17",
-    "gpt-5.1-2025-11-13",
+    #"gpt-5.4-nano-2026-03-17",
+    "gpt-5-nano-2025-08-07",
+    "gpt-5-mini-2025-08-07",
+    #"gpt-5.2-2025-12-11",
+    "o4-mini-2025-04-16",
+    # "gpt-4.1-2025-04-14",
+    # "gpt-4.1-mini-2025-04-14",
+    # "gpt-4.1-nano-2025-04-14",
 )
 
 EQ_QUERY_TYPES: tuple[QueryType, ...] = (
@@ -342,6 +347,12 @@ def validate_outputs(
                 append_log(
                     log_lines,
                     f"[ERROR] Unexpected output audio_id={result.audio_id} "
+                    f"in {query_type.value}.",
+                )
+            if not result.generated_query.strip():
+                append_log(
+                    log_lines,
+                    f"[ERROR] Empty generated_query for audio_id={result.audio_id} "
                     f"in {query_type.value}.",
                 )
 

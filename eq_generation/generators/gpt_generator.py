@@ -9,6 +9,15 @@ from eq_generation.generators.prompts import format_prompt, get_system_prompt
 from eq_generation.query_types import QueryType
 
 
+_SAMPLING_UNSUPPORTED_MODEL_PREFIXES = (
+    "gpt-5-mini-",
+    "gpt-5-nano-",
+    "o4-",
+)
+
+_MIN_REASONING_MODEL_TOKENS = 1024
+
+
 class GPTEQGenerator(BaseEQGenerator):
     def __init__(
         self,
@@ -30,6 +39,14 @@ class GPTEQGenerator(BaseEQGenerator):
             self._client = OpenAI(api_key=self.api_key)
         return self._client
 
+    @property
+    def supports_sampling_params(self) -> bool:
+        return not self.model.startswith(_SAMPLING_UNSUPPORTED_MODEL_PREFIXES)
+
+    @property
+    def uses_reasoning_budget(self) -> bool:
+        return self.model.startswith(_SAMPLING_UNSUPPORTED_MODEL_PREFIXES)
+
     def _generate_single(
         self,
         caption: str,
@@ -38,15 +55,29 @@ class GPTEQGenerator(BaseEQGenerator):
     ) -> str:
         del hard_negative_caption
         prompt = format_prompt(query_type, caption)
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
+        max_completion_tokens = self.max_tokens
+        if self.uses_reasoning_budget:
+            max_completion_tokens = max(max_completion_tokens, _MIN_REASONING_MODEL_TOKENS)
+
+        request = {
+            "model": self.model,
+            "messages": [
                 {"role": "system", "content": get_system_prompt(query_type, backend="gpt")},
                 {"role": "user", "content": prompt},
             ],
-            max_completion_tokens=self.max_tokens,
-            temperature=self.temperature,
-            top_p=self.top_p,
-            n=1,
-        )
-        return response.choices[0].message.content.strip()
+            "max_completion_tokens": max_completion_tokens,
+            "n": 1,
+        }
+        if self.supports_sampling_params:
+            request["temperature"] = self.temperature
+            request["top_p"] = self.top_p
+        if self.uses_reasoning_budget:
+            request["reasoning_effort"] = "low"
+
+        response = self.client.chat.completions.create(**request)
+        content = response.choices[0].message.content or ""
+        query = content.strip()
+        if not query:
+            finish_reason = response.choices[0].finish_reason
+            raise RuntimeError(f"OpenAI returned an empty query (finish_reason={finish_reason})")
+        return query
