@@ -4,105 +4,9 @@ import json
 
 from eq_generation.query_types import QueryType
 
-# Few-shot blocks for full_caption (entire caption set as bullets)
-_KEY_DOG_SET = """- a dog barking repeatedly in the background
-- a dog barking over distant outdoor ambience
-- repeated barking from a dog outside
-- a dog keeps barking in the background
-- outdoor audio with a dog barking again and again"""
-
-_KEY_RAIN_SET = """- rain falling on a metal surface with distant thunder
-- a storm with rainfall hitting metal and thunder far away
-- rain pattering on metal while thunder rumbles in the distance
-- steady rain on a metal surface with faint thunder
-- rainfall striking metal with distant thunder sounds"""
-
-_KEY_COFFEE_SET = """- coffee machine brewing espresso with steam hissing
-- espresso machine producing coffee with steam and brewing noises
-- sound of a coffee maker brewing espresso with steam"""
-
-FULL_CAPTION_PROMPT_TEMPLATE = f"""Caption Set:
-{_KEY_DOG_SET}
-Full_caption: A dog is barking repeatedly outside, accompanied by distant outdoor background ambience.
-
-Caption Set:
-{_KEY_RAIN_SET}
-Full_caption: Steady rain is falling and pattering on a metal surface during a storm, while faint thunder rumbles in the distance.
-
-Caption Set:
-{_KEY_COFFEE_SET}
-Full_caption: An espresso machine is brewing coffee, producing distinct brewing noises and hissing steam.
-
-Caption Set:
-{{caption}}
+FULL_CAPTION_PROMPT_TEMPLATE = """Caption Set:
+{caption}
 Full_caption:"""
-
-
-_SINGLE_DOG = "repeated barking from a dog outside"
-_SINGLE_RAIN = "rain pattering on metal while thunder rumbles in the distance"
-_SINGLE_COFFEE = "espresso machine producing coffee with steam and brewing noises"
-
-# Few-shot prefixes for key_phrase / statement / question / command / indirect:
-# one reference caption per example. The real caption is appended via json.dumps (safe quoting).
-_KEY_PHRASE_FEWSHOT = f"""Source Caption: {_SINGLE_DOG}
-Query: Repeated dog barking outside
-
-Source Caption: {_SINGLE_RAIN}
-Query: Rain pattering on metal with distant thunder
-
-Source Caption: {_SINGLE_COFFEE}
-Query: Coffee maker brewing espresso with steam
-
-Source Caption: {{caption}}
-Query:"""
-
-_STATEMENT_FEWSHOT = f"""Source Caption: {_SINGLE_DOG}
-Statement: The audio captures a dog barking repeatedly outside.
-
-Source Caption: {_SINGLE_RAIN}
-Statement: There is the sound of rain pattering on metal while thunder rumbles in the distance.
-
-Source Caption: {_SINGLE_COFFEE}
-Statement: An espresso maker is brewing coffee and producing steam sounds.
-
-Source Caption: {{caption}}
-Statement:"""
-
-_COMMAND_FEWSHOT = f"""Source Caption: {_SINGLE_DOG}
-Command: Find audio of repeated barking from a dog outside.
-
-Source Caption: {_SINGLE_RAIN}
-Command: Search for a recording of rain pattering on metal while thunder rumbles in the distance.
-
-Source Caption: {_SINGLE_COFFEE}
-Command: Retrieve the sound of a coffee maker brewing espresso with steam.
-
-Source Caption: {{caption}}
-Command:"""
-
-_QUESTION_FEWSHOT = f"""Source Caption: {_SINGLE_DOG}
-Question: Does this audio contain the sound of repeated barking from a dog outside?
-
-Source Caption: {_SINGLE_RAIN}
-Question: Is there a recording of rain pattering on metal while thunder rumbles in the distance?
-
-Source Caption: {_SINGLE_COFFEE}
-Question: Can you hear a coffee maker brewing espresso with steam?
-
-Source Caption: {{caption}}
-Question:"""
-
-_INDIRECT_FEWSHOT = f"""Source Caption: {_SINGLE_DOG}
-Polite: I would appreciate it if you could find a clip with repeated barking from a dog outside.
-
-Source Caption: {_SINGLE_RAIN}
-Polite: Could you please locate an audio file featuring rain pattering on metal while thunder rumbles in the distance?
-
-Source Caption: {_SINGLE_COFFEE}
-Polite: I was wondering if you might have the sound of a coffee maker brewing espresso with steam.
-
-Source Caption: {{caption}}
-Polite:"""
 
 SINGLE_REFERENCE_SUFFIX = {
     QueryType.KEY_PHRASE: "Query:",
@@ -110,14 +14,6 @@ SINGLE_REFERENCE_SUFFIX = {
     QueryType.QUESTION: "Question:",
     QueryType.COMMAND: "Command:",
     QueryType.INDIRECT: "Indirect:",
-}
-
-SINGLE_REFERENCE_FEWSHOT = {
-    QueryType.KEY_PHRASE: _KEY_PHRASE_FEWSHOT,
-    QueryType.STATEMENT: _STATEMENT_FEWSHOT,
-    QueryType.QUESTION: _QUESTION_FEWSHOT,
-    QueryType.COMMAND: _COMMAND_FEWSHOT,
-    QueryType.INDIRECT: _INDIRECT_FEWSHOT,
 }
 
 SYSTEM_PROMPTS = {
@@ -147,15 +43,13 @@ SYSTEM_PROMPTS = {
 
 
 def format_prompt(query_type: QueryType, caption: str) -> str:
-    # 안전한 따옴표 처리를 위해 json.dumps 사용
     safe_caption = json.dumps(caption)
 
     if query_type == QueryType.FULL_CAPTION:
         return FULL_CAPTION_PROMPT_TEMPLATE.format(caption=safe_caption)
 
-    # 퓨샷 템플릿에 있는 {{caption}} 자리에 safe_caption을 쏙 집어넣음
-    template = SINGLE_REFERENCE_FEWSHOT[query_type]
-    return template.format(caption=safe_caption)
+    suffix = SINGLE_REFERENCE_SUFFIX[query_type]
+    return f"Source Caption: {safe_caption}\n{suffix}"
 
 
 def get_system_prompt(query_type: QueryType, backend: str = "gpt") -> str:

@@ -1,5 +1,5 @@
 #!/usr/bin/env -S uv run python
-"""Generate EQ files for hand-picked recall-case captions across temperatures.
+"""Generate EQ files for hand-picked recall-case captions across models and temperatures.
 
 The default case list is the six examples grouped by CLAP-model behavior:
 
@@ -10,8 +10,8 @@ The default case list is the six examples grouped by CLAP-model behavior:
 - only_mga
 - only_laion
 
-For each temperature, this script writes per-query-type EQ JSONL files with the
-temperature in the file name, for example ``eq_key_phrase_temp_0_7.jsonl``.
+For each top_p value, model, and temperature, this script writes per-query-type
+EQ JSONL files under ``<output-dir>/<top_p>/<model>/<temperature>/``.
 """
 from __future__ import annotations
 
@@ -36,6 +36,12 @@ DEFAULT_TEMPERATURES: tuple[float, ...] = (
     1.3,
     1.6,
     2.0,
+)
+
+DEFAULT_MODELS: tuple[str, ...] = (
+    "gpt-5.4-2026-03-05",
+    "gpt-5.4-mini-2026-03-17",
+    "gpt-5.1-2025-11-13",
 )
 
 EQ_QUERY_TYPES: tuple[QueryType, ...] = (
@@ -165,6 +171,24 @@ def _temperature_slug(temperature: float) -> str:
     return "temp_" + re.sub(r"[^0-9A-Za-z]+", "_", text).strip("_")
 
 
+def _top_p_slug(top_p: float) -> str:
+    text = f"{top_p:g}"
+    return "topp_" + re.sub(r"[^0-9A-Za-z]+", "_", text).strip("_")
+
+
+def _model_slug(model: str) -> str:
+    return re.sub(r"[^0-9A-Za-z._-]+", "_", model.strip()).strip("_")
+
+
+def _parse_models(raw: str | None) -> list[str]:
+    if not raw:
+        return list(DEFAULT_MODELS)
+    values = [chunk.strip() for chunk in raw.split(",") if chunk.strip()]
+    if not values:
+        raise ValueError("--models did not contain any model names")
+    return values
+
+
 def _parse_temperatures(raw: str | None) -> list[float]:
     if not raw:
         return list(DEFAULT_TEMPERATURES)
@@ -274,12 +298,8 @@ def build_results_for_query_type(
     return results
 
 
-def write_temperature_validation_log(
-    output_dir: Path,
-    temperature: float,
-    log_lines: list[str],
-) -> Path:
-    log_path = output_dir / f"eq_validation_{_temperature_slug(temperature)}.log"
+def write_validation_log(output_dir: Path, log_lines: list[str]) -> Path:
+    log_path = output_dir / "eq_validation.log"
     log_path.write_text("\n".join(log_lines) + "\n", encoding="utf-8")
     return log_path
 
@@ -301,12 +321,6 @@ def validate_recall_cases(cases: tuple[dict[str, Any], ...]) -> None:
 
     if errors:
         raise ValueError("Invalid recall case caption sets:\n" + "\n".join(errors))
-
-
-def output_filename_for_temperature(query_type: QueryType, temperature: float) -> str:
-    filename = EQ_OUTPUT_FILENAMES[query_type]
-    path = Path(filename)
-    return f"{path.stem}_{_temperature_slug(temperature)}{path.suffix}"
 
 
 def validate_outputs(
@@ -354,7 +368,8 @@ def generate_for_temperature(
     append_log(
         log_lines,
         f"[INFO] Generating {len(query_types)} EQ types for "
-        f"{len(prepared_entries)} recall cases at temperature={temperature:g}",
+        f"{len(prepared_entries)} recall cases with model={source_model} "
+        f"temperature={temperature:g} top_p={top_p:g}",
     )
 
     generator = EQGenerator(
@@ -381,7 +396,7 @@ def generate_for_temperature(
         outputs_by_type[query_type] = results
         generator.save_results(
             results,
-            output_dir / output_filename_for_temperature(query_type, temperature),
+            output_dir / EQ_OUTPUT_FILENAMES[query_type],
             format="jsonl",
         )
 
@@ -389,11 +404,11 @@ def generate_for_temperature(
     error_count = sum(1 for line in log_lines if line.startswith("[ERROR]"))
     if error_count:
         append_log(log_lines, f"[ERROR] Validation finished with {error_count} error(s).")
-        log_path = write_temperature_validation_log(output_dir, temperature, log_lines)
+        log_path = write_validation_log(output_dir, log_lines)
         raise SystemExit(f"See validation log: {log_path}")
 
     append_log(log_lines, "[INFO] EQ generation complete.")
-    log_path = write_temperature_validation_log(output_dir, temperature, log_lines)
+    log_path = write_validation_log(output_dir, log_lines)
     print(f"[INFO] Validation log saved to {log_path}")
 
 
@@ -401,7 +416,7 @@ def main() -> None:
     load_dotenv()
 
     parser = argparse.ArgumentParser(
-        description="Generate EQ for recall-case captions across temperature values.",
+        description="Generate EQ for recall-case captions across models and temperature values.",
     )
     parser.add_argument(
         "--output-dir",
@@ -416,6 +431,18 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--models",
+        help=(
+            "Comma-separated OpenAI models. Default: "
+            + ",".join(DEFAULT_MODELS)
+        ),
+    )
+    parser.add_argument(
+        "--top-p",
+        type=float,
+        help="OpenAI top_p sampling value. Default: model.top_p from config, or 0.9",
+    )
+    parser.add_argument(
         "--eq-types",
         choices=["five", "six"],
         default="six",
@@ -426,16 +453,15 @@ def main() -> None:
 
     config = load_config(args.config)
     model_config = config.get("model", {})
-    source_model = model_config.get("source_model", "gpt-5.4-2026-03-05")
-    regen_model = model_config.get("regen_model", source_model)
     backend = model_config.get("backend", "gpt")
     batch_size = model_config.get("batch_size", 2)
     max_tokens = model_config.get("max_tokens", 256)
-    top_p = model_config.get("top_p", 0.9)
+    top_p = args.top_p if args.top_p is not None else model_config.get("top_p", 0.9)
 
     query_types = FIVE_EQ_QUERY_TYPES if args.eq_types == "five" else EQ_QUERY_TYPES
+    models = _parse_models(args.models)
     temperatures = _parse_temperatures(args.temperatures)
-    output_root = Path(args.output_dir)
+    output_root = Path(args.output_dir) / _top_p_slug(top_p)
 
     validate_recall_cases(RECALL_CASES)
 
@@ -443,19 +469,27 @@ def main() -> None:
     if not prepared_entries:
         raise SystemExit("No recall cases were prepared.")
 
-    for temperature in temperatures:
-        generate_for_temperature(
-            temperature=temperature,
-            output_dir=output_root,
-            prepared_entries=prepared_entries,
-            query_types=query_types,
-            backend=backend,
-            source_model=source_model,
-            regen_model=regen_model,
-            batch_size=batch_size,
-            max_tokens=max_tokens,
-            top_p=top_p,
-        )
+    print(
+        f"[INFO] Running {len(models) * len(temperatures)} model/temperature combinations "
+        f"for {len(prepared_entries)} recall cases with top_p={top_p:g}."
+    )
+
+    for model in models:
+        model_dir = output_root / _model_slug(model)
+        regen_model = model_config.get("regen_model", model)
+        for temperature in temperatures:
+            generate_for_temperature(
+                temperature=temperature,
+                output_dir=model_dir / _temperature_slug(temperature),
+                prepared_entries=prepared_entries,
+                query_types=query_types,
+                backend=backend,
+                source_model=model,
+                regen_model=regen_model,
+                batch_size=batch_size,
+                max_tokens=max_tokens,
+                top_p=top_p,
+            )
 
 
 if __name__ == "__main__":
