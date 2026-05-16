@@ -16,6 +16,7 @@ EQ JSONL files under ``<output-dir>/<top_p>/<model>/<temperature>/``.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import random
 import re
 import sys
@@ -30,8 +31,6 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from eq_generation import EQGenerator, QueryResult, QueryType, load_config  # noqa: E402
 
 DEFAULT_TEMPERATURES: tuple[float, ...] = (
-    0.35,
-    0.7,
     1.0,
     1.3,
     1.6,
@@ -43,9 +42,9 @@ DEFAULT_MODELS: tuple[str, ...] = (
     #"gpt-5-nano-2025-08-07",
     #"gpt-5-mini-2025-08-07",
     #"gpt-5.2-2025-12-11",
-    #"gpt-5.1-2025-11-13",
+    "gpt-5.1-2025-11-13",
     "gpt-4.1-2025-04-14",
-    "gpt-4.1-mini-2025-04-14",
+    #"gpt-4.1-mini-2025-04-14",
     # "gpt-4.1-nano-2025-04-14",
 )
 
@@ -478,7 +477,7 @@ def main() -> None:
     query_types = FIVE_EQ_QUERY_TYPES if args.eq_types == "five" else EQ_QUERY_TYPES
     models = _parse_models(args.models)
     temperatures = _parse_temperatures(args.temperatures)
-    output_root = Path(args.output_dir) / _top_p_slug(top_p)
+    output_root = Path(args.output_dir) / _top_p_slug(top_p) / datetime.now().strftime("%Y%m%d_%H%M%S")
 
     recall_cases = RECALL_CASES[: args.num_cases] if args.num_cases is not None else RECALL_CASES
     validate_recall_cases(recall_cases)
