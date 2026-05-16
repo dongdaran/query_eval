@@ -15,7 +15,7 @@ dependencies = [
     "librosa",
     "numpy",
     "huggingface_hub",
-    "datasets<4.0.0",
+    "datasets<5.0.0",
     "resampy",
     "timm",
     "einops",
