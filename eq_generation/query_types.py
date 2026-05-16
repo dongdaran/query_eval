@@ -29,6 +29,7 @@ class QueryResult:
     query_type: QueryType
     generated_query: str
     original_captions: list[str]
+    explanation: str = ""
     metadata: Optional[dict] = field(default_factory=dict)
     source_model: str = "gpt-5.4-mini"
     regen_model: str = "gpt-5.4-mini"
@@ -41,6 +42,7 @@ class QueryResult:
             "query_type": self.query_type.value,
             "generated_query": self.generated_query,
             "original_captions": self.original_captions,
+            "explanation": self.explanation,
             "metadata": self.metadata,
             "source_model": self.source_model,
             "regen_model": self.regen_model,

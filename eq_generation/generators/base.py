@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Optional, Sequence
+from typing import Any, Optional, Sequence
 
 from tqdm import tqdm
 
@@ -14,7 +14,7 @@ class BaseEQGenerator(ABC):
     def __init__(
         self,
         batch_size: int = 10,
-        max_tokens: int = 256,
+        max_tokens: int = 1024,
         temperature: float = 0.35,
         top_p: float = 0.9,
     ) -> None:
@@ -29,8 +29,16 @@ class BaseEQGenerator(ABC):
         caption: str,
         query_type: QueryType,
         hard_negative_caption: Optional[str] = None,
-    ) -> str:
+    ) -> Any:
         raise NotImplementedError
+
+    @staticmethod
+    def _normalize_generation(raw_output: Any) -> tuple[str, str]:
+        if isinstance(raw_output, dict):
+            generated_query = str(raw_output.get("generated_query", "")).strip()
+            explanation = str(raw_output.get("explanation", "")).strip()
+            return generated_query, explanation
+        return str(raw_output).strip(), ""
 
     def generate(
         self,
@@ -49,10 +57,11 @@ class BaseEQGenerator(ABC):
 
         for index in iterator:
             try:
-                query = self._generate_single(
+                raw_output = self._generate_single(
                     caption=captions[index],
                     query_type=query_type,
                 )
+                query, explanation = self._normalize_generation(raw_output)
                 results.append(
                     QueryResult(
                         audio_id=clip_ids[index],
@@ -61,6 +70,7 @@ class BaseEQGenerator(ABC):
                         original_captions=[captions[index]],
                         query_type=query_type,
                         generated_query=query.strip(),
+                        explanation=explanation,
                     )
                 )
             except Exception as exc:

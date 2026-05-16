@@ -40,12 +40,12 @@ DEFAULT_TEMPERATURES: tuple[float, ...] = (
 
 DEFAULT_MODELS: tuple[str, ...] = (
     #"gpt-5.4-nano-2026-03-17",
-    "gpt-5-nano-2025-08-07",
-    "gpt-5-mini-2025-08-07",
+    #"gpt-5-nano-2025-08-07",
+    #"gpt-5-mini-2025-08-07",
     #"gpt-5.2-2025-12-11",
-    "o4-mini-2025-04-16",
-    # "gpt-4.1-2025-04-14",
-    # "gpt-4.1-mini-2025-04-14",
+    #"gpt-5.1-2025-11-13",
+    "gpt-4.1-2025-04-14",
+    "gpt-4.1-mini-2025-04-14",
     # "gpt-4.1-nano-2025-04-14",
 )
 
@@ -294,6 +294,7 @@ def build_results_for_query_type(
                 query_type=query_type,
                 generated_query=raw_result.generated_query,
                 original_captions=original_captions,
+                explanation=raw_result.explanation,
                 metadata=meta,
                 source_model=source_model,
                 regen_model=regen_model,
@@ -459,6 +460,11 @@ def main() -> None:
         default="six",
         help="Use five EQ types or all six including full_caption. Default: six",
     )
+    parser.add_argument(
+        "--num-cases",
+        type=int,
+        help="Optional limit on recall cases for a quick sample run.",
+    )
     parser.add_argument("--config", type=str, default="config.yaml", help="Path to configuration file")
     args = parser.parse_args()
 
@@ -466,7 +472,7 @@ def main() -> None:
     model_config = config.get("model", {})
     backend = model_config.get("backend", "gpt")
     batch_size = model_config.get("batch_size", 2)
-    max_tokens = model_config.get("max_tokens", 256)
+    max_tokens = model_config.get("max_tokens", 1024)
     top_p = args.top_p if args.top_p is not None else model_config.get("top_p", 0.9)
 
     query_types = FIVE_EQ_QUERY_TYPES if args.eq_types == "five" else EQ_QUERY_TYPES
@@ -474,9 +480,10 @@ def main() -> None:
     temperatures = _parse_temperatures(args.temperatures)
     output_root = Path(args.output_dir) / _top_p_slug(top_p)
 
-    validate_recall_cases(RECALL_CASES)
+    recall_cases = RECALL_CASES[: args.num_cases] if args.num_cases is not None else RECALL_CASES
+    validate_recall_cases(recall_cases)
 
-    prepared_entries = prepare_entries_from_records(list(RECALL_CASES), [])
+    prepared_entries = prepare_entries_from_records(list(recall_cases), [])
     if not prepared_entries:
         raise SystemExit("No recall cases were prepared.")
 

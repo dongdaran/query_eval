@@ -127,6 +127,7 @@ def build_results_for_query_type(
                 query_type=query_type,
                 generated_query=raw_result.generated_query,
                 original_captions=original_captions,
+                explanation=raw_result.explanation,
                 metadata=meta,
                 source_model=source_model,
                 regen_model=regen_model,
@@ -230,7 +231,7 @@ def main() -> None:
     backend = model_config.get("backend", "gpt")
     temperature = model_config.get("temperature", 0.35)
     batch_size = model_config.get("batch_size", 2)
-    max_tokens = model_config.get("max_tokens", 256)
+    max_tokens = model_config.get("max_tokens", 1024)
     top_p = model_config.get("top_p", 0.9)
 
     output_dir = Path(args.output_dir)

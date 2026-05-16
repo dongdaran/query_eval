@@ -9,7 +9,7 @@ dataset:
 model:
   temperature: 0.35
   top_p: 0.9
-  max_tokens: 256
+  max_tokens: 1024
 
 models:
   - name: "laion"

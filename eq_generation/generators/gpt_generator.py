@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import os
 
 from openai import OpenAI
+from pydantic import BaseModel
 
 from eq_generation.generators.base import BaseEQGenerator
 from eq_generation.generators.prompts import format_prompt, get_system_prompt
@@ -18,13 +20,33 @@ _SAMPLING_UNSUPPORTED_MODEL_PREFIXES = (
 _MIN_REASONING_MODEL_TOKENS = 1024
 
 
+class AnswerFormat(BaseModel):
+    explanation: str
+    answer: str
+
+
+def _parse_model_content(content: str) -> dict[str, str]:
+    text = content.strip()
+    try:
+        parsed = json.loads(text)
+    except json.JSONDecodeError:
+        return {"generated_query": text, "explanation": ""}
+    if not isinstance(parsed, dict):
+        return {"generated_query": text, "explanation": ""}
+    answer = parsed.get("answer", parsed.get("generated_query", ""))
+    return {
+        "generated_query": str(answer).strip(),
+        "explanation": str(parsed.get("explanation", "")).strip(),
+    }
+
+
 class GPTEQGenerator(BaseEQGenerator):
     def __init__(
         self,
         model: str = "gpt-5.4-mini",
         api_key: str | None = None,
         batch_size: int = 10,
-        max_tokens: int = 256,
+        max_tokens: int = 1024,
         temperature: float = 0.35,
         top_p: float = 0.9,
     ) -> None:
@@ -52,7 +74,7 @@ class GPTEQGenerator(BaseEQGenerator):
         caption: str,
         query_type: QueryType,
         hard_negative_caption: str | None = None,
-    ) -> str:
+    ) -> dict[str, str]:
         del hard_negative_caption
         prompt = format_prompt(query_type, caption)
         max_completion_tokens = self.max_tokens
@@ -67,6 +89,7 @@ class GPTEQGenerator(BaseEQGenerator):
             ],
             "max_completion_tokens": max_completion_tokens,
             "n": 1,
+            "response_format": AnswerFormat,
         }
         if self.supports_sampling_params:
             request["temperature"] = self.temperature
@@ -74,10 +97,16 @@ class GPTEQGenerator(BaseEQGenerator):
         if self.uses_reasoning_budget:
             request["reasoning_effort"] = "low"
 
-        response = self.client.chat.completions.create(**request)
-        content = response.choices[0].message.content or ""
-        query = content.strip()
-        if not query:
+        response = self.client.beta.chat.completions.parse(**request)
+        message = response.choices[0].message
+        if message.parsed is not None:
+            parsed = {
+                "generated_query": message.parsed.answer.strip(),
+                "explanation": message.parsed.explanation.strip(),
+            }
+        else:
+            parsed = _parse_model_content(message.content or "")
+        if not parsed["generated_query"]:
             finish_reason = response.choices[0].finish_reason
             raise RuntimeError(f"OpenAI returned an empty query (finish_reason={finish_reason})")
-        return query
+        return parsed
