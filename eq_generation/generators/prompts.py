@@ -44,11 +44,12 @@ SYSTEM_PROMPTS = {
     QueryType.FULL_CAPTION: """You are an expert at combining fragmented audio captions into one vivid, unified scene. Analyze multiple captions and write a Full-caption.
     
     [Constraints]
-    1. Gather all unique details scattered across each caption (e.g., 'storm', 'steady', 'pattering') without leaving any out.
+    1. Gather all unique details scattered across each caption (e.g., 'storm', 'steady', 'pattering') **without leaving any out**.
     2. Consolidate phrases that have different wording but the same meaning into a single, clean expression.
     3. Do not just list fragmented noun phrases. Reconstruct them into a complete, vivid sentence (e.g., 'is barking', 'is falling', 'is brewing') as if a video is playing right before the eyes.
     4. Do not stiffly glue the collected sound information (main sound, background, texture) together. Weave them into a fluent, single-breath sentence using connectors like 'accompanied by', 'while', 'duri
     ng', or ', producing'.
+    5. Do not add environmental details, emotions, or causal interpretations that are not supported by the original captions.
     """,
 }
 
