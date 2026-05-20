@@ -25,6 +25,16 @@ class AnswerFormat(BaseModel):
     answer: str
 
 
+class AnswerOnlyFormat(BaseModel):
+    answer: str
+
+
+def _response_format_for(query_type: QueryType) -> type[BaseModel]:
+    if query_type in {QueryType.QUESTION, QueryType.COMMAND, QueryType.INDIRECT}:
+        return AnswerFormat
+    return AnswerOnlyFormat
+
+
 def _parse_model_content(content: str) -> dict[str, str]:
     text = content.strip()
     try:
@@ -45,6 +55,7 @@ class GPTEQGenerator(BaseEQGenerator):
         self,
         model: str = "gpt-5.4-mini",
         api_key: str | None = None,
+        base_url: str | None = None,
         batch_size: int = 10,
         max_tokens: int = 1024,
         temperature: float = 0.35,
@@ -52,13 +63,27 @@ class GPTEQGenerator(BaseEQGenerator):
     ) -> None:
         super().__init__(batch_size, max_tokens, temperature, top_p)
         self.model = model
-        self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
+        self.api_key = api_key or os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENROUTER_API_KEY")
+        self.base_url = base_url or os.environ.get("OPENAI_BASE_URL") or os.environ.get("OPENROUTER_BASE_URL")
+        if self.base_url is None and os.environ.get("OPENROUTER_API_KEY") and not os.environ.get("OPENAI_API_KEY"):
+            self.base_url = "https://openrouter.ai/api/v1"
         self._client: OpenAI | None = None
 
     @property
     def client(self) -> OpenAI:
         if self._client is None:
-            self._client = OpenAI(api_key=self.api_key)
+            default_headers = {}
+            site_url = os.environ.get("OPENROUTER_SITE_URL")
+            app_name = os.environ.get("OPENROUTER_APP_NAME")
+            if site_url:
+                default_headers["HTTP-Referer"] = site_url
+            if app_name:
+                default_headers["X-Title"] = app_name
+            self._client = OpenAI(
+                api_key=self.api_key,
+                base_url=self.base_url,
+                default_headers=default_headers or None,
+            )
         return self._client
 
     @property
@@ -68,6 +93,10 @@ class GPTEQGenerator(BaseEQGenerator):
     @property
     def uses_reasoning_budget(self) -> bool:
         return self.model.startswith(_SAMPLING_UNSUPPORTED_MODEL_PREFIXES)
+
+    @property
+    def uses_openrouter(self) -> bool:
+        return bool(self.base_url and "openrouter.ai" in self.base_url)
 
     def _generate_single(
         self,
@@ -81,31 +110,42 @@ class GPTEQGenerator(BaseEQGenerator):
         if self.uses_reasoning_budget:
             max_completion_tokens = max(max_completion_tokens, _MIN_REASONING_MODEL_TOKENS)
 
+        response_format = _response_format_for(query_type)
         request = {
             "model": self.model,
             "messages": [
                 {"role": "system", "content": get_system_prompt(query_type, backend="gpt")},
                 {"role": "user", "content": prompt},
             ],
-            "max_completion_tokens": max_completion_tokens,
             "n": 1,
-            "response_format": AnswerFormat,
         }
+        if self.uses_openrouter:
+            request["max_tokens"] = max_completion_tokens
+            if response_format is AnswerFormat:
+                request["response_format"] = {"type": "json_object"}
+        else:
+            request["max_completion_tokens"] = max_completion_tokens
+            request["response_format"] = response_format
         if self.supports_sampling_params:
             request["temperature"] = self.temperature
             request["top_p"] = self.top_p
         if self.uses_reasoning_budget:
             request["reasoning_effort"] = "low"
 
-        response = self.client.beta.chat.completions.parse(**request)
-        message = response.choices[0].message
-        if message.parsed is not None:
-            parsed = {
-                "generated_query": message.parsed.answer.strip(),
-                "explanation": message.parsed.explanation.strip(),
-            }
-        else:
+        if self.uses_openrouter:
+            response = self.client.chat.completions.create(**request)
+            message = response.choices[0].message
             parsed = _parse_model_content(message.content or "")
+        else:
+            response = self.client.beta.chat.completions.parse(**request)
+            message = response.choices[0].message
+            if message.parsed is not None:
+                parsed = {
+                    "generated_query": message.parsed.answer.strip(),
+                    "explanation": getattr(message.parsed, "explanation", "").strip(),
+                }
+            else:
+                parsed = _parse_model_content(message.content or "")
         if not parsed["generated_query"]:
             finish_reason = response.choices[0].finish_reason
             raise RuntimeError(f"OpenAI returned an empty query (finish_reason={finish_reason})")

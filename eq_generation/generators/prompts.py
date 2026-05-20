@@ -7,11 +7,19 @@ from eq_generation.query_types import QueryType
 
 START_WORD_COUNT_RANGE = (3, 15)
 START_WORD_VARIATION_TYPES = {
-    QueryType.STATEMENT,
     QueryType.QUESTION,
     QueryType.COMMAND,
     QueryType.INDIRECT,
 }
+
+
+def set_start_word_count_range(min_count: int, max_count: int) -> None:
+    if min_count < 0:
+        raise ValueError("min_count must be non-negative")
+    if max_count < min_count:
+        raise ValueError("max_count must be greater than or equal to min_count")
+    global START_WORD_COUNT_RANGE
+    START_WORD_COUNT_RANGE = (min_count, max_count)
 
 FULL_CAPTION_PROMPT_TEMPLATE = """Caption Set:
 {caption}
@@ -55,16 +63,17 @@ SYSTEM_PROMPTS = {
 
 
 def _with_output_schema(prompt: str, query_type: QueryType) -> str:
-    start_word_instruction = ""
-    if query_type in START_WORD_VARIATION_TYPES:
-        start_word_count = random.randint(*START_WORD_COUNT_RANGE)
-        start_word_instruction = (
-            "\n\nIn \"explanation\", first generate "
-            f"{start_word_count} plausible starting words or phrases for the final query, "
-            "then choose a final starting word or phrase that is not in that generated list. "
-            "The \"answer\" must start with that non-listed choice. Explain briefly that the "
-            "final query starts with the non-listed choice."
-        )
+    if query_type not in START_WORD_VARIATION_TYPES:
+        return f"""{prompt}"""
+
+    start_word_count = random.randint(*START_WORD_COUNT_RANGE)
+    start_word_instruction = (
+        "\n\nIn \"explanation\", first generate "
+        f"{start_word_count} plausible starting words or phrases for the final query, "
+        "then choose a final starting word or phrase that is syntactically and semantically distinct from all of the above "
+        "The \"answer\" must start with that non-listed choice. Explain briefly that the "
+        "final query starts with the non-listed choice."
+    )
 
     return f"""{prompt}
 
@@ -72,9 +81,7 @@ def _with_output_schema(prompt: str, query_type: QueryType) -> str:
 Return only a valid JSON object with exactly these string fields:
 - "answer": the final query text.
 - "explanation": a concise explanation of how you chose the final query.
-{start_word_instruction}
-
-Do not include any field named "reasoning"."""
+{start_word_instruction}"""
 
 
 def format_prompt(query_type: QueryType, caption: str) -> str:

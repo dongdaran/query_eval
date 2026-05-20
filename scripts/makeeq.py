@@ -18,8 +18,10 @@ from eq_generation import (
     load_audiocaps,
     load_clotho,
     load_config,
+    load_macs,
     load_mecat,
 )
+from eq_generation.generators.prompts import set_start_word_count_range
 
 EQ_QUERY_TYPES = [
     QueryType.KEY_PHRASE,
@@ -38,6 +40,8 @@ EQ_OUTPUT_FILENAMES = {
     QueryType.INDIRECT: "eq_indirect.jsonl",
     QueryType.FULL_CAPTION: "eq_full_caption.jsonl",
 }
+
+QUERY_TYPES_BY_VALUE = {query_type.value: query_type for query_type in EQ_QUERY_TYPES}
 
 
 def format_caption_set(captions: list[str]) -> str:
@@ -140,6 +144,7 @@ def build_results_for_query_type(
 def validate_outputs(
     prepared_entries: list[dict[str, Any]],
     outputs_by_type: dict[QueryType, list[QueryResult]],
+    query_types: list[QueryType],
     log_lines: list[str],
 ) -> None:
     counts = Counter()
@@ -177,11 +182,11 @@ def validate_outputs(
 
     for entry in prepared_entries:
         produced = counts[entry["audio_id"]]
-        if produced != len(EQ_QUERY_TYPES):
+        if produced != len(query_types):
             append_log(
                 log_lines,
                 f"[ERROR] audio_id={entry['audio_id']} produced {produced} outputs; "
-                f"expected {len(EQ_QUERY_TYPES)}.",
+                f"expected {len(query_types)}.",
             )
 
 
@@ -200,7 +205,7 @@ def main() -> None:
     parser.add_argument(
         "--dataset",
         required=True,
-        choices=["audiocaps", "clotho", "mecat"],
+        choices=["audiocaps", "clotho", "mecat", "macs"],
         help="Dataset type used to choose the input loader.",
     )
     parser.add_argument(
@@ -208,7 +213,7 @@ def main() -> None:
         "--captions-path",
         dest="captions_path",
         required=True,
-        help="Path to the caption CSV, or a MECAT JSON directory/JSONL file when --dataset mecat.",
+        help="Path to the caption CSV, MACS YAML, or MECAT JSON directory/JSONL file.",
     )
     parser.add_argument("--output-dir", required=True, help="Directory for per-type EQ JSONL files")
     parser.add_argument(
@@ -221,32 +226,92 @@ def main() -> None:
         type=int,
         help="Optional limit on clips (CSV / record order after grouping).",
     )
+    parser.add_argument(
+        "--start-index",
+        type=int,
+        default=0,
+        help="Zero-based inclusive start index after grouping. Default: 0",
+    )
+    parser.add_argument(
+        "--end-index",
+        type=int,
+        default=None,
+        help="Zero-based inclusive end index after grouping. Default: no end limit",
+    )
     parser.add_argument("--config", type=str, default="config.yaml", help="Path to configuration file")
+    parser.add_argument(
+        "--query-types",
+        nargs="+",
+        choices=list(QUERY_TYPES_BY_VALUE),
+        default=list(QUERY_TYPES_BY_VALUE),
+        help="Query types to generate. Default: all query types.",
+    )
+    parser.add_argument(
+        "--start-word-count-min",
+        type=int,
+        default=None,
+        help="Minimum number of plausible starting words/phrases requested in prompt explanations.",
+    )
+    parser.add_argument(
+        "--start-word-count-max",
+        type=int,
+        default=None,
+        help="Maximum number of plausible starting words/phrases requested in prompt explanations.",
+    )
     args = parser.parse_args()
 
     config = load_config(args.config)
     model_config = config.get("model", {})
-    source_model = model_config.get("source_model", "gpt-5.4-mini")
-    regen_model = model_config.get("regen_model", "gpt-5.4-mini")
+    source_model = model_config.get("source_model", "gpt-4.1-2025-04-14")
+    regen_model = model_config.get("regen_model", "gpt-4.1-2025-04-14")
     backend = model_config.get("backend", "gpt")
-    temperature = model_config.get("temperature", 0.35)
+    base_url = model_config.get("base_url") or model_config.get("api_base_url")
+    temperature = model_config.get("temperature", 1.0)
     batch_size = model_config.get("batch_size", 2)
     max_tokens = model_config.get("max_tokens", 1024)
     top_p = model_config.get("top_p", 0.9)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    query_types = [QUERY_TYPES_BY_VALUE[value] for value in args.query_types]
 
     log_lines: list[str] = []
+    append_log(log_lines, "[INFO] Query types: " + ", ".join(query_type.value for query_type in query_types))
+    if args.start_word_count_min is not None or args.start_word_count_max is not None:
+        if args.start_word_count_min is None or args.start_word_count_max is None:
+            raise SystemExit("--start-word-count-min and --start-word-count-max must be provided together.")
+        set_start_word_count_range(args.start_word_count_min, args.start_word_count_max)
+        append_log(
+            log_lines,
+            "[INFO] Using start-word candidate count range: "
+            f"{args.start_word_count_min}-{args.start_word_count_max}",
+        )
     append_log(log_lines, f"[INFO] Loading records from {args.captions_path}")
     append_log(log_lines, f"[INFO] Using dataset loader: {args.dataset}")
     if args.dataset == "clotho":
         records = load_clotho(args.captions_path, split=args.split)
+    elif args.dataset == "macs":
+        records = load_macs(args.captions_path, split=args.split)
     elif args.dataset == "mecat":
         records = load_mecat(args.captions_path, split=args.split)
     else:
         records = load_audiocaps(args.captions_path, split=args.split)
     append_log(log_lines, f"[INFO] Loaded {len(records)} unique audio_id groups")
+
+    if args.start_index < 0:
+        raise SystemExit("--start-index must be >= 0.")
+    if args.end_index is not None and args.end_index < args.start_index:
+        raise SystemExit("--end-index must be >= --start-index.")
+
+    if args.start_index or args.end_index is not None:
+        slice_end = args.end_index + 1 if args.end_index is not None else None
+        records = records[args.start_index : slice_end]
+        end_label = args.end_index if args.end_index is not None else "end"
+        append_log(
+            log_lines,
+            f"[INFO] Limited to index range {args.start_index}-{end_label}; "
+            f"{len(records)} clips remain.",
+        )
 
     if args.num_queries is not None and len(records) > args.num_queries:
         records = records[: args.num_queries]
@@ -262,6 +327,7 @@ def main() -> None:
     generator = EQGenerator(
         backend=backend,
         model=source_model,
+        base_url=base_url,
         batch_size=batch_size,
         max_tokens=max_tokens,
         temperature=temperature,
@@ -269,7 +335,7 @@ def main() -> None:
     )
 
     outputs_by_type: dict[QueryType, list[QueryResult]] = {}
-    for query_type in EQ_QUERY_TYPES:
+    for query_type in query_types:
         append_log(log_lines, f"[INFO] Generating {query_type.value} for {len(prepared_entries)} entries")
         results = build_results_for_query_type(
             prepared_entries=prepared_entries,
@@ -281,7 +347,7 @@ def main() -> None:
         outputs_by_type[query_type] = results
         generator.save_results(results, output_dir / EQ_OUTPUT_FILENAMES[query_type], format="jsonl")
 
-    validate_outputs(prepared_entries, outputs_by_type, log_lines)
+    validate_outputs(prepared_entries, outputs_by_type, query_types, log_lines)
 
     error_count = sum(1 for line in log_lines if line.startswith("[ERROR]"))
     if error_count:
@@ -291,7 +357,7 @@ def main() -> None:
 
     append_log(
         log_lines,
-        f"[INFO] EQ generation complete. Produced {len(prepared_entries) * len(EQ_QUERY_TYPES)} outputs.",
+        f"[INFO] EQ generation complete. Produced {len(prepared_entries) * len(query_types)} outputs.",
     )
     log_path = write_validation_log(output_dir, log_lines)
     print(f"[INFO] Validation log saved to {log_path}")

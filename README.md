@@ -31,6 +31,21 @@ Create a `.env` file in the project root:
 OPENAI_API_KEY=your_api_key_here
 ```
 
+For OpenRouter, use its OpenAI-compatible endpoint:
+
+```env
+OPENROUTER_API_KEY=your_openrouter_key_here
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+```
+
+Then run with the OpenRouter config:
+
+```bash
+uv run python scripts/makeeq.py --config config_openrouter.yaml --dataset macs ...
+```
+
+`scripts/makeeq.py` loads `.env` automatically. `OPENROUTER_BASE_URL` is optional when only `OPENROUTER_API_KEY` is set.
+
 Default model settings live in [`config.yaml`](config.yaml):
 
 ```yaml

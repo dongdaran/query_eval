@@ -1,41 +1,42 @@
-# Python
+# Python bytecode and virtual environments
 __pycache__/
 *.py[cod]
 *$py.class
 .venv/
 venv/
 env/
-/.env
 
-# Projects
-input/
+# Local secrets and machine-specific config
+/.env
+.codex
+
+# Project outputs and generated artifacts
+output/
 results/
 temp/
+eval.jsonl
 
 # Third party models & checkpoints
 models_third_party/
 checkpoints/
-eval.jsonl
 
 # UV / Hatch
+.uv-cache/
 dist/
 build/
 *.egg-info/
 
-# Jupyter & Caches
+# Tool caches
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 
-# PyPI configuration file
+# Package publishing
 .pypirc
 
 # Cursor
-#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
-#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
-#  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
 
@@ -44,18 +45,27 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# EQ pipeline data 
-results/eq/mecat_test/eq_command.jsonl
-results/eq/mecat_test/eq_full_caption.jsonl
-results/eq/mecat_test/eq_indirect.jsonl
-results/eq/mecat_test/eq_question.jsonl
-results/eq/mecat_test/eq_statement.jsonl
-results/eq/mecat_test/eq_validation.log
+# Input data
+#
+# Keep raw/generated input data out of git by default. Re-include only the
+# small validation files needed to reproduce validation runs.
+input/*
 
-input/mecat/flac_files/
-input/mecat/json_files/
-# Codex config
-.codex
-input/mecat/flac_files.zip
-input/mecat/*.zip
-output/
+!input/audiocaps/
+input/audiocaps/*
+!input/audiocaps/val.csv
+
+!input/clotho/
+input/clotho/*
+!input/clotho/clotho_captions_validation.csv
+
+!input/MACS/
+input/MACS/*
+!input/MACS/MACS_test.yaml
+!input/MACS/MACS_val.yaml
+
+!input/mecat/
+input/mecat/*
+!input/mecat/json_train/
+input/mecat/json_train/*
+!input/mecat/json_train/00A_train_top160.jsonl

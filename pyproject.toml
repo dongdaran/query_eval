@@ -15,6 +15,7 @@ dependencies = [
     "librosa",
     "numpy",
     "pydantic",
+    "python-dotenv",
     "huggingface_hub",
     "datasets<4.0.0",
     "resampy",
