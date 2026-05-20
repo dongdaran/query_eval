@@ -45,6 +45,10 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+.github/
+.agent/
+
+
 # Input data
 #
 # Keep raw/generated input data out of git by default. Re-include only the
