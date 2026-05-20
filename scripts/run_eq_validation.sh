@@ -21,8 +21,8 @@ Environment variables:
   CONFIG        Config YAML. Default: config_openrouter.yaml
   OUT_ROOT      Output root. Default: results/eq_validation
   DATASETS      Space-separated dataset keys to run.
-                Supported: audiocaps_val clotho_validation macs_full macs_test macs_val
-                           mecat_train_top160
+                Supported: audiocaps_val clotho_validation macs_full macs_test
+                           macs_test_balanced500 macs_val mecat_train_top160
                 Default: audiocaps_val clotho_validation macs_test macs_val mecat_train_top160
   PROMPT_RANGES Space-separated MIN:MAX ranges for prompt start-word counts.
                 Default: 3:15. Set to empty to disable.
@@ -128,6 +128,9 @@ run_dataset_key() {
       ;;
     macs_test)
       run_dataset "${key}" macs input/MACS/MACS_test.yaml test "${out_root}" "$@"
+      ;;
+    macs_test_balanced500)
+      run_dataset "${key}" macs input/MACS/MACS_test_balanced500.yaml test "${out_root}" "$@"
       ;;
     macs_val)
       run_dataset "${key}" macs input/MACS/MACS_val.yaml validation "${out_root}" "$@"
