@@ -1,19 +1,14 @@
 from __future__ import annotations
 
 import json
-import random
 
 from eq_generation.query_types import QueryType
 
 START_WORD_COUNT_RANGE = (3, 15)
-START_WORD_VARIATION_TYPES = {
-    QueryType.QUESTION,
-    QueryType.COMMAND,
-    QueryType.INDIRECT,
-}
 
 
 def set_start_word_count_range(min_count: int, max_count: int) -> None:
+    """Keep CLI compatibility; baseline prompts no longer use start-word sampling."""
     if min_count < 0:
         raise ValueError("min_count must be non-negative")
     if max_count < min_count:
@@ -63,25 +58,14 @@ SYSTEM_PROMPTS = {
 
 
 def _with_output_schema(prompt: str, query_type: QueryType) -> str:
-    if query_type not in START_WORD_VARIATION_TYPES:
-        return f"""{prompt}"""
-
-    start_word_count = random.randint(*START_WORD_COUNT_RANGE)
-    start_word_instruction = (
-        "\n\nIn \"explanation\", first generate "
-        f"{start_word_count} plausible starting words or phrases for the final query, "
-        "then choose a final starting word or phrase that is syntactically and semantically distinct from all of the above "
-        "The \"answer\" must start with that non-listed choice. Explain briefly that the "
-        "final query starts with the non-listed choice."
-    )
+    del query_type
 
     return f"""{prompt}
 
 [Output Schema]
 Return only a valid JSON object with exactly these string fields:
 - "answer": the final query text.
-- "explanation": a concise explanation of how you chose the final query.
-{start_word_instruction}"""
+Do not include an explanation field or any additional fields."""
 
 
 def format_prompt(query_type: QueryType, caption: str) -> str:

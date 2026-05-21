@@ -3,13 +3,14 @@ set -euo pipefail
 
 CONFIG="${CONFIG-config_openrouter.yaml}"
 OUT_ROOT="${OUT_ROOT-results/eq_validation}"
-DATASETS="${DATASETS-audiocaps_val clotho_validation macs_test macs_val mecat_train_top160}"
+DATASETS="${DATASETS-audiocaps_val clotho_validation macs_test_remaining macs_val mecat_train_top160}"
 PROMPT_RANGES="${PROMPT_RANGES-3:15}"
 RUN_REPEATS="${RUN_REPEATS-1}"
 START_INDEX="${START_INDEX-0}"
 END_INDEX="${END_INDEX-}"
 NUM_QUERIES="${NUM_QUERIES-}"
 QUERY_TYPES="${QUERY_TYPES-}"
+AUDIOCAPS_VAL_QUERY_TYPES="${AUDIOCAPS_VAL_QUERY_TYPES-}"
 DRY_RUN="${DRY_RUN-0}"
 UV_CACHE_DIR="${UV_CACHE_DIR-.uv-cache}"
 
@@ -22,8 +23,10 @@ Environment variables:
   OUT_ROOT      Output root. Default: results/eq_validation
   DATASETS      Space-separated dataset keys to run.
                 Supported: audiocaps_val clotho_validation macs_full macs_test
-                           macs_test_balanced500 macs_val mecat_train_top160
-                Default: audiocaps_val clotho_validation macs_test macs_val mecat_train_top160
+                           macs_test_balanced500 macs_test_remaining
+                           macs_val mecat_train_top160
+                Default: audiocaps_val clotho_validation macs_test_remaining
+                         macs_val mecat_train_top160
   PROMPT_RANGES Space-separated MIN:MAX ranges for prompt start-word counts.
                 Default: 3:15. Set to empty to disable.
   RUN_REPEATS   Repeats per prompt range. Default: 1
@@ -31,6 +34,9 @@ Environment variables:
   END_INDEX     Inclusive end index after grouping. Default: unset, no end limit
   NUM_QUERIES   Optional max clips after indexing. Default: unset
   QUERY_TYPES   Optional space-separated query types, e.g. "key_phrase statement question"
+  AUDIOCAPS_VAL_QUERY_TYPES
+                Optional query types for audiocaps_val only. Overrides QUERY_TYPES
+                for audiocaps_val when set, e.g. "command indirect full_caption".
   DRY_RUN       Print commands without running them. Default: 0
 
 Examples:
@@ -38,6 +44,7 @@ Examples:
   DATASETS="macs_val" NUM_QUERIES=10 scripts/run_eq_validation.sh
   DRY_RUN=1 DATASETS="macs_val" NUM_QUERIES=10 scripts/run_eq_validation.sh
   CONFIG=config.yaml PROMPT_RANGES="" QUERY_TYPES="key_phrase statement" scripts/run_eq_validation.sh
+  AUDIOCAPS_VAL_QUERY_TYPES="command indirect full_caption" scripts/run_eq_validation.sh
 EOF
 }
 
@@ -115,10 +122,16 @@ run_dataset_key() {
   local key="$1"
   local out_root="$2"
   shift 2
+  local dataset_query_args=()
+
+  if [[ "${key}" == "audiocaps_val" && -n "${AUDIOCAPS_VAL_QUERY_TYPES}" ]]; then
+    # shellcheck disable=SC2206
+    dataset_query_args=(--query-types ${AUDIOCAPS_VAL_QUERY_TYPES})
+  fi
 
   case "${key}" in
     audiocaps_val)
-      run_dataset "${key}" audiocaps input/audiocaps/val.csv val "${out_root}" "$@"
+      run_dataset "${key}" audiocaps input/audiocaps/val.csv val "${out_root}" "${dataset_query_args[@]}" "$@"
       ;;
     clotho_validation)
       run_dataset "${key}" clotho input/clotho/clotho_captions_validation.csv validation "${out_root}" "$@"
@@ -131,6 +144,16 @@ run_dataset_key() {
       ;;
     macs_test_balanced500)
       run_dataset "${key}" macs input/MACS/MACS_test_balanced500.yaml test "${out_root}" "$@"
+      ;;
+    macs_test_remaining)
+      run_dataset \
+        "${key}" \
+        macs \
+        input/MACS/MACS_test.yaml \
+        test \
+        "${out_root}" \
+        --exclude-captions-path input/MACS/MACS_test_balanced500.yaml \
+        "$@"
       ;;
     macs_val)
       run_dataset "${key}" macs input/MACS/MACS_val.yaml validation "${out_root}" "$@"

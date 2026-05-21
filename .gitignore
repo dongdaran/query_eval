@@ -12,7 +12,6 @@ env/
 
 # Project outputs and generated artifacts
 output/
-results/
 temp/
 eval.jsonl
 

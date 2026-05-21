@@ -1,0 +1,13 @@
+[INFO] Query types: key_phrase, statement, question, command, indirect, full_caption
+[INFO] Using start-word candidate count range: 3-15
+[INFO] Loading records from input/mecat/json_train/00A_train_top160.jsonl
+[INFO] Using dataset loader: mecat
+[INFO] Loaded 160 unique audio_id groups
+[INFO] Prepared 160 entries.
+[INFO] Generating key_phrase for 160 entries
+[INFO] Generating statement for 160 entries
+[INFO] Generating question for 160 entries
+[INFO] Generating command for 160 entries
+[INFO] Generating indirect for 160 entries
+[INFO] Generating full_caption for 160 entries
+[INFO] EQ generation complete. Produced 960 outputs.

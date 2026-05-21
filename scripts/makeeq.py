@@ -44,6 +44,16 @@ EQ_OUTPUT_FILENAMES = {
 QUERY_TYPES_BY_VALUE = {query_type.value: query_type for query_type in EQ_QUERY_TYPES}
 
 
+def load_records(dataset: str, captions_path: str, split: str) -> list[dict[str, Any]]:
+    if dataset == "clotho":
+        return load_clotho(captions_path, split=split)
+    if dataset == "macs":
+        return load_macs(captions_path, split=split)
+    if dataset == "mecat":
+        return load_mecat(captions_path, split=split)
+    return load_audiocaps(captions_path, split=split)
+
+
 def format_caption_set(captions: list[str]) -> str:
     return "\n".join(f"- {caption}" for caption in captions)
 
@@ -215,6 +225,15 @@ def main() -> None:
         required=True,
         help="Path to the caption CSV, MACS YAML, or MECAT JSON directory/JSONL file.",
     )
+    parser.add_argument(
+        "--exclude-captions-path",
+        action="append",
+        default=[],
+        help=(
+            "Optional caption path to exclude by audio_id using the same dataset loader and split. "
+            "Can be passed multiple times."
+        ),
+    )
     parser.add_argument("--output-dir", required=True, help="Directory for per-type EQ JSONL files")
     parser.add_argument(
         "--split",
@@ -288,15 +307,26 @@ def main() -> None:
         )
     append_log(log_lines, f"[INFO] Loading records from {args.captions_path}")
     append_log(log_lines, f"[INFO] Using dataset loader: {args.dataset}")
-    if args.dataset == "clotho":
-        records = load_clotho(args.captions_path, split=args.split)
-    elif args.dataset == "macs":
-        records = load_macs(args.captions_path, split=args.split)
-    elif args.dataset == "mecat":
-        records = load_mecat(args.captions_path, split=args.split)
-    else:
-        records = load_audiocaps(args.captions_path, split=args.split)
+    records = load_records(args.dataset, args.captions_path, args.split)
     append_log(log_lines, f"[INFO] Loaded {len(records)} unique audio_id groups")
+
+    exclude_audio_ids: set[str] = set()
+    for exclude_path in args.exclude_captions_path:
+        excluded_records = load_records(args.dataset, exclude_path, args.split)
+        excluded_ids = {str(record["audio_id"]).strip() for record in excluded_records}
+        exclude_audio_ids.update(audio_id for audio_id in excluded_ids if audio_id)
+        append_log(
+            log_lines,
+            f"[INFO] Loaded {len(excluded_ids)} exclude audio_id groups from {exclude_path}",
+        )
+    if exclude_audio_ids:
+        before_count = len(records)
+        records = [record for record in records if str(record["audio_id"]).strip() not in exclude_audio_ids]
+        append_log(
+            log_lines,
+            f"[INFO] Excluded {before_count - len(records)} matching audio_id groups; "
+            f"{len(records)} clips remain.",
+        )
 
     if args.start_index < 0:
         raise SystemExit("--start-index must be >= 0.")

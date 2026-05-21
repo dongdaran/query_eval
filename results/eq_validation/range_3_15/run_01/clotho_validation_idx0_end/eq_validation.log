@@ -1,0 +1,13 @@
+[INFO] Query types: key_phrase, statement, question, command, indirect, full_caption
+[INFO] Using start-word candidate count range: 3-15
+[INFO] Loading records from input/clotho/clotho_captions_validation.csv
+[INFO] Using dataset loader: clotho
+[INFO] Loaded 1045 unique audio_id groups
+[INFO] Prepared 1045 entries.
+[INFO] Generating key_phrase for 1045 entries
+[INFO] Generating statement for 1045 entries
+[INFO] Generating question for 1045 entries
+[INFO] Generating command for 1045 entries
+[INFO] Generating indirect for 1045 entries
+[INFO] Generating full_caption for 1045 entries
+[INFO] EQ generation complete. Produced 6270 outputs.

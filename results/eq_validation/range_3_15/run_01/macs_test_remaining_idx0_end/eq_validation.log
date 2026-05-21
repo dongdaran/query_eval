@@ -1,0 +1,15 @@
+[INFO] Query types: key_phrase, statement, question, command, indirect, full_caption
+[INFO] Using start-word candidate count range: 3-15
+[INFO] Loading records from input/MACS/MACS_test.yaml
+[INFO] Using dataset loader: macs
+[INFO] Loaded 1000 unique audio_id groups
+[INFO] Loaded 500 exclude audio_id groups from input/MACS/MACS_test_balanced500.yaml
+[INFO] Excluded 500 matching audio_id groups; 500 clips remain.
+[INFO] Prepared 500 entries.
+[INFO] Generating key_phrase for 500 entries
+[INFO] Generating statement for 500 entries
+[INFO] Generating question for 500 entries
+[INFO] Generating command for 500 entries
+[INFO] Generating indirect for 500 entries
+[INFO] Generating full_caption for 500 entries
+[INFO] EQ generation complete. Produced 3000 outputs.

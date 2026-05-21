@@ -20,18 +20,12 @@ _SAMPLING_UNSUPPORTED_MODEL_PREFIXES = (
 _MIN_REASONING_MODEL_TOKENS = 1024
 
 
-class AnswerFormat(BaseModel):
-    explanation: str
-    answer: str
-
-
 class AnswerOnlyFormat(BaseModel):
     answer: str
 
 
 def _response_format_for(query_type: QueryType) -> type[BaseModel]:
-    if query_type in {QueryType.QUESTION, QueryType.COMMAND, QueryType.INDIRECT}:
-        return AnswerFormat
+    del query_type
     return AnswerOnlyFormat
 
 
@@ -121,8 +115,7 @@ class GPTEQGenerator(BaseEQGenerator):
         }
         if self.uses_openrouter:
             request["max_tokens"] = max_completion_tokens
-            if response_format is AnswerFormat:
-                request["response_format"] = {"type": "json_object"}
+            request["response_format"] = {"type": "json_object"}
         else:
             request["max_completion_tokens"] = max_completion_tokens
             request["response_format"] = response_format

@@ -1,0 +1,749 @@
+{
+  "audio_id": "CM49C3RkzV8_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "An adult female speaks, and muted speech occurs briefly in the background",
+    "Female speaking",
+    "A woman delivers a speech",
+    "A woman speaking",
+    "A woman is speaking"
+  ],
+  "source_caption": "A woman delivers a speech",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "CM49C3RkzV8",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "An adult female is speaking, delivering a speech while muted speech briefly occurs in the background.",
+    "key_phrase": "woman delivering speech",
+    "statement": "A woman is delivering a speech.",
+    "question": "Is a woman delivering a speech?",
+    "command": "Find a woman delivering a speech.",
+    "indirect": "Would you mind helping me locate the audio where a woman is delivering a speech?"
+  }
+}
+
+{
+  "audio_id": "pI_kPedctoo_10",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Motorcycle engine running",
+    "Motorcycle engines running and revving as a man talks in the background",
+    "An engine running and being revved and some muffled speech",
+    "Several motorcycle engines running and revving as a man talks in the background",
+    "A motorcycle engine is revving with low speech in the background"
+  ],
+  "source_caption": "An engine running and being revved and some muffled speech",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "pI_kPedctoo",
+    "start_time": 10.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Several motorcycle engines are running and revving, accompanied by muffled speech from a man talking in the background.",
+    "key_phrase": "engine running revving with muffled speech",
+    "statement": "An engine is running and being revved while some muffled speech can be heard.",
+    "question": "Can you hear an engine running and being revved, along with some muffled speech?",
+    "command": "Find audio of an engine running and being revved and some muffled speech.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of an engine running and being revved, along with some muffled speech?"
+  }
+}
+
+{
+  "audio_id": "rUq4w4EUSWA_0",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Loud buzzing followed by rustling and a toilet flushing",
+    "Paper tearing followed by an electric motor buzzing before more paper tears than crinkles as bells chime proceeded by a toilet flushing",
+    "An electronic motor buzzing and paper tearing followed by a bell chiming and a plastic click then a toilet flushing as paper crinkles in the background",
+    "A toilet flushing",
+    "An electronic device buzzing followed by paper tearing and then crumpling as a bell rings before a toilet flushes"
+  ],
+  "source_caption": "An electronic motor buzzing and paper tearing followed by a bell chiming and a plastic click then a toilet flushing as paper crinkles in the background",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "rUq4w4EUSWA",
+    "start_time": 0.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A loud electronic motor buzzes as paper tears and then crumples, accompanied by the chiming of a bell and a plastic click, before a toilet flushes while paper crinkles in the background.",
+    "key_phrase": "electronic motor buzzing with paper tearing, bell chiming, plastic clicking, toilet flushing, background paper crinkling",
+    "statement": "An electronic motor is buzzing and paper is tearing, and this is followed by a bell chiming and a plastic click, then a toilet flushes while paper crinkles in the background.",
+    "question": "Can you hear an electronic motor buzzing and paper tearing, followed by a bell chiming, a plastic click, and then a toilet flushing while paper crinkles in the background?",
+    "command": "Extract electronic motor buzzing and paper tearing followed by bell chiming and plastic click then toilet flushing as paper crinkles in the background.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of an electronic motor buzzing and paper tearing, followed by a bell chiming, a plastic click, and a toilet flushing, with paper crinkling in the background?"
+  }
+}
+
+{
+  "audio_id": "6eX6bJOFftA_11",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A crowd of people talking as ducks quack and a motorboat speeds by in the distance",
+    "A man is vocalizing something while kids are talking in the background and music is being played, with a helicopter flying overhead",
+    "Ducks quack and men speak with distant humming",
+    "Motor boat cruising over water people speaking",
+    "A motorboat drives in the distance as people talk and rap music plays in the background"
+  ],
+  "source_caption": "Ducks quack and men speak with distant humming",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "6eX6bJOFftA",
+    "start_time": 11.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A crowd of people talk and kids converse while men vocalize and speak, accompanied by ducks quacking, rap music playing, a motorboat cruising and speeding by in the distance, and a helicopter flying overhead with distant humming.",
+    "key_phrase": "ducks quacking men speaking with distant humming",
+    "statement": "Ducks are quacking while men are speaking, and there is distant humming in the background.",
+    "question": "Can you hear ducks quacking and men speaking with distant humming?",
+    "command": "Extract ducks quacking and men speaking with distant humming.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of ducks quacking and men speaking with distant humming?"
+  }
+}
+
+{
+  "audio_id": "nq0BF9zGkzg_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A low slow groan followed by a crash and men speaking with distant birds",
+    "A low slow scream then a crash then birds chirping and men speaking",
+    "An animal cries, followed by a crash, then two people speak with one another",
+    "Groaning followed by a bang and breaking glass followed by men speaking with seagulls cawing in the distance",
+    "A person screaming followed glass crashing then two men communicating with each other as seagulls squawk in the distance"
+  ],
+  "source_caption": "An animal cries, followed by a crash, then two people speak with one another",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "nq0BF9zGkzg",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A low, slow groan or scream is followed by the sound of glass crashing and breaking, then two men speak with each other while distant birds, including seagulls, chirp and caw in the background.",
+    "key_phrase": "animal crying with crash and people speaking",
+    "statement": "An animal cries, and a crash follows, while two people speak with one another.",
+    "question": "Can you hear an animal crying, then a crash, and afterwards two people speaking with each other?",
+    "command": "Find an animal cry followed by a crash and two people speaking with one another.",
+    "indirect": "Would you mind helping to locate the part where an animal cries, followed by a crash, and then two people speak with one another?"
+  }
+}
+
+{
+  "audio_id": "B8rdur4aams_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A vehicle engine gurgling followed by a horn tooting as wind blows into a microphone",
+    "Rattling and humming with a horn echoing and wind blowing",
+    "Rustling and shaking followed by a horn and gusts of wind",
+    "A vehicle horn honking as a motor engine gurgles and wind blows into a microphone",
+    "Rattling of an engine with wind blowing and a horn honking"
+  ],
+  "source_caption": "Rustling and shaking followed by a horn and gusts of wind",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "B8rdur4aams",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A vehicle engine gurgles and rattles while a horn honks and echoes, accompanied by wind blowing and gusting into the microphone, with occasional rustling and shaking.",
+    "key_phrase": "rustling shaking with horn wind gusts",
+    "statement": "Something rustles and shakes, and then a horn sounds while gusts of wind blow.",
+    "question": "Can you hear rustling and shaking followed by a horn and gusts of wind?",
+    "command": "Extract rustling and shaking followed by a horn and gusts of wind.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of rustling and shaking, followed by a horn and gusts of wind?"
+  }
+}
+
+{
+  "audio_id": "D9GHUPGWsV0_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A woman and man speak as click-clops occur and a sheep fleets",
+    "Female speaking and a sheep bleating",
+    "An adult female and adult male speak in the foreground, slight clattering is occurring, and an animal bleats in the background",
+    "A woman and young man are speaking over bleating sheep",
+    "Sheep bleat and a woman speaks"
+  ],
+  "source_caption": "An adult female and adult male speak in the foreground, slight clattering is occurring, and an animal bleats in the background",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "D9GHUPGWsV0",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "An adult woman and man are speaking in the foreground as sheep bleat in the background, accompanied by click-clopping and slight clattering sounds.",
+    "key_phrase": "adult male female speaking foreground with slight clattering distant animal bleating",
+    "statement": "An adult female and an adult male are speaking in the foreground while slight clattering is occurring, and an animal is bleating in the background.",
+    "question": "Can you hear an adult female and an adult male speaking in the foreground, with slight clattering and an animal bleating in the background?",
+    "command": "Extract adult female and adult male speaking in the foreground, slight clattering, and animal bleating in the background.",
+    "indirect": "If you have a moment, would you be able to help locate the sounds where an adult female and adult male are speaking in the foreground, there is slight clattering, and an animal is bleating in the background?"
+  }
+}
+
+{
+  "audio_id": "ir1XTdyt4IY_18",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A loud burst and a metallic ring followed by men speaking and laughing",
+    "Air hissing followed by a popping explosion then warning signals and a man laughing and talking",
+    "Released air hissing followed by a popping explosion then a metal ding persists as a person is laughing and a man is talking.",
+    "Steam hissing followed by a loud burst proceeded by warning sirens then a man laughing followed by another man talking",
+    "An explosion followed by a man shouting."
+  ],
+  "source_caption": "Released air hissing followed by a popping explosion then a metal ding persists as a person is laughing and a man is talking.",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "ir1XTdyt4IY",
+    "start_time": 18.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A loud burst and popping explosion erupts as air or steam hisses and a metallic ring or ding persists, accompanied by warning sirens and signals, while men shout, laugh, and talk in the aftermath.",
+    "key_phrase": "air hissing with popping explosion metal ding persistent laughing talking",
+    "statement": "Air is hissing as it is released and is followed by a popping explosion, while a persistent metal ding can be heard as a person laughs and a man talks.",
+    "question": "Can you hear released air hissing followed by a popping explosion, a persistent metal ding, someone laughing, and a man talking?",
+    "command": "Extract released air hissing followed by a popping explosion then a metal ding persisting as a person is laughing and a man is talking.",
+    "indirect": "If you have a moment, would you mind helping me locate the segment where released air is hissing, followed by a popping explosion and a persistent metal ding, all while a person is laughing and a man is talking?"
+  }
+}
+
+{
+  "audio_id": "8BPTQO_cx7E_20",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A man talking followed by a crowd laughing and applauding",
+    "Male speaking and then laughter and applause",
+    "A man speaking followed by applause and laughter from an audience",
+    "A man speaks and then a crowd breaks into applause and laughter",
+    "A man is speaking followed by applause"
+  ],
+  "source_caption": "A man speaking followed by applause and laughter from an audience",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "8BPTQO_cx7E",
+    "start_time": 20.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A man is speaking, followed by a crowd breaking into laughter and applause.",
+    "key_phrase": "man speaking with audience applause laughter",
+    "statement": "A man is speaking, and afterward, the audience applauds and laughs.",
+    "question": "Is there a man speaking, followed by applause and laughter from an audience?",
+    "command": "Find a man speaking followed by applause and laughter from an audience.",
+    "indirect": "Would you mind helping to locate the part where a man is speaking, followed by applause and laughter from an audience?"
+  }
+}
+
+{
+  "audio_id": "XPebkNzsnRI_10",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Whistling and then laughing with a male speaking in the distance",
+    "Young children are whistling and laughing",
+    "Whistling followed by a child giggling and then Moe whistling",
+    "A person is whistling and baby is laughing followed by a man talking",
+    "A person whistling followed by a young girl laughing as a man talks in the background then another person whistling"
+  ],
+  "source_caption": "Whistling followed by a child giggling and then Moe whistling",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "XPebkNzsnRI",
+    "start_time": 10.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A person whistles, followed by a young child or baby giggling, as another person whistles again while a man speaks in the background.",
+    "key_phrase": "whistling with child giggling Moe whistling",
+    "statement": "Someone whistles, and then a child giggles, while afterward Moe whistles.",
+    "question": "Do you hear whistling followed by a child giggling and then Moe whistling?",
+    "command": "Extract whistling followed by a child giggling and then Moe whistling.",
+    "indirect": "If you have a moment, would you mind helping me locate the audio that features whistling, followed by a child giggling, and then Moe whistling?"
+  }
+}
+
+{
+  "audio_id": "pWQeV08kYR0_10",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "An emergency siren wailing as a truck drives by",
+    "Emergency sirens going off as a vehicle drives by",
+    "An ambulance sounds the siren",
+    "Emergency vehicle siren loudly then fading into the distance",
+    "Sirens ring as an emergency vehicle speeds past"
+  ],
+  "source_caption": "An ambulance sounds the siren",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "pWQeV08kYR0",
+    "start_time": 10.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "An emergency vehicle speeds past, sounding its loud siren that wails and rings as it drives by, gradually fading into the distance.",
+    "key_phrase": "ambulance siren blaring",
+    "statement": "An ambulance is sounding its siren.",
+    "question": "Is an ambulance sounding its siren?",
+    "command": "Find an ambulance sounding the siren.",
+    "indirect": "Would you be able to help locate the sound of an ambulance siren?"
+  }
+}
+
+{
+  "audio_id": "wVi5w_NU6CM_0",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Emergency sirens wail as a truck engine accelerates and drives by",
+    "A fire engine horn blows, followed by a fire engine siren blowing",
+    "A fire truck siren blasts",
+    "A fire truck sounds the siren as it travels",
+    "Humming of an engine with a ringing siren"
+  ],
+  "source_caption": "A fire truck siren blasts",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "wVi5w_NU6CM",
+    "start_time": 0.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Emergency sirens wail and a fire truck horn blows as a fire truck accelerates and drives by, its engine humming and siren blasting.",
+    "key_phrase": "fire truck siren blasting",
+    "statement": "A fire truck is sounding its siren loudly.",
+    "question": "Can you hear a fire truck siren blasting?",
+    "command": "Find a fire truck siren blast.",
+    "indirect": "If you have a moment, would you mind helping me locate the sound of a fire truck siren blasting?"
+  }
+}
+
+{
+  "audio_id": "Td2EEDdFlRY_10",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A man talking as music plays followed by a guitar strumming as steam hisses in the background",
+    "A man talking followed by footsteps on gravel as guitar music is playing",
+    "A man talking as a woman talks in the distance while light music is playing followed by a guitar strumming and footsteps walking on gravel",
+    "A man speaks as music plays followed by footsteps",
+    "A man is speaking as music plays followed by musical instrument sounds"
+  ],
+  "source_caption": "A man talking as a woman talks in the distance while light music is playing followed by a guitar strumming and footsteps walking on gravel",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "Td2EEDdFlRY",
+    "start_time": 10.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A man is speaking as light music plays, accompanied by distant woman's voice, with guitar strumming and other musical instrument sounds, while footsteps walk on gravel and steam hisses in the background.",
+    "key_phrase": "man talking with distant woman talking, light music playing, guitar strumming, footsteps walking on gravel",
+    "statement": "A man is talking while a woman is talking in the distance, and light music is playing; this is followed by someone strumming a guitar and footsteps walking on gravel.",
+    "question": "Can you hear a man talking while a woman speaks in the distance, with light music playing, followed by guitar strumming and footsteps on gravel?",
+    "command": "Extract a man talking as a woman talks in the distance while light music is playing followed by a guitar strumming and footsteps walking on gravel.",
+    "indirect": "Would you mind helping to locate the part where a man is talking as a woman talks in the distance, with light music playing, followed by guitar strumming and the sound of footsteps walking on gravel?"
+  }
+}
+
+{
+  "audio_id": "9dLLsZVRSZI_110",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A truck engine running followed by a truck horn honking",
+    "A truck is idling, and a horn honks",
+    "Engine idling continuously followed by honking",
+    "A truck engine running followed by a truck horn honking",
+    "Humming and rustling from a large engine followed by two honks of a horn"
+  ],
+  "source_caption": "Engine idling continuously followed by honking",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "9dLLsZVRSZI",
+    "start_time": 110.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A truck engine is idling steadily, producing a continuous humming and rustling sound, followed by two loud honks of the truck horn.",
+    "key_phrase": "engine idling with honking",
+    "statement": "An engine idles continuously, and then someone honks.",
+    "question": "Can you hear an engine idling continuously, followed by honking?",
+    "command": "Extract engine idling continuously followed by honking.",
+    "indirect": "If you don't mind, could you please help me locate the part where the engine is idling continuously, followed by the sound of honking?"
+  }
+}
+
+{
+  "audio_id": "kF1KWybdRpM_60",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "An aircraft taking off with some wind noises in the background",
+    "A loud airplane engine passes by and starts to diminish in the distance",
+    "Aircraft engine roars as it approaches and then recedes",
+    "An airplane engine and wind",
+    "An airplane is taking flight"
+  ],
+  "source_caption": "Aircraft engine roars as it approaches and then recedes",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "kF1KWybdRpM",
+    "start_time": 60.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "An airplane engine roars as the aircraft takes off, accompanied by wind noises in the background, then passes by and gradually diminishes in the distance.",
+    "key_phrase": "aircraft engine roaring approaching receding",
+    "statement": "An aircraft engine roars as it approaches, and the sound gradually fades as it recedes.",
+    "question": "Can you hear an aircraft engine roaring as it approaches and then recedes?",
+    "command": "Extract aircraft engine roar as it approaches and then recedes.",
+    "indirect": "If you have a moment, would you mind helping to locate the sound of an aircraft engine roaring as it approaches and then recedes?"
+  }
+}
+
+{
+  "audio_id": "0yETgW44MZU_20",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A sudden horn blare as a train passes",
+    "A train horn honking as a train runs on railroad tracks and birds chirping",
+    "A train sounds horn while the engine taps",
+    "A loud, continuous horn followed by brief clanking and more horn honking",
+    "A honking horn from an oncoming train"
+  ],
+  "source_caption": "A train sounds horn while the engine taps",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "0yETgW44MZU",
+    "start_time": 20.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A loud, continuous train horn blares as a train runs on railroad tracks, accompanied by brief clanking and engine tapping, while birds chirp in the background and more horn honking follows.",
+    "key_phrase": "train horn sounding with engine tapping",
+    "statement": "A train sounds its horn while the engine taps.",
+    "question": "Can you hear a train sounding its horn while the engine taps?",
+    "command": "Retrieve audio of a train sounding horn while the engine taps.",
+    "indirect": "If you have a moment, would you be able to help locate the part where a train sounds its horn while the engine taps?"
+  }
+}
+
+{
+  "audio_id": "tJhVH3VIrnE_80",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Wood cracking as metal clanks and slams against a wooden surface",
+    "Cracking and banging",
+    "A object is hitting a surface followed by a loud boom",
+    "Wood cracking and metal clanking with a series of hammering on a wooden surface",
+    "Wood cracking and loud cluttering"
+  ],
+  "source_caption": "A object is hitting a surface followed by a loud boom",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "tJhVH3VIrnE",
+    "start_time": 80.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Wood cracks as metal clanks and slams against a wooden surface, producing a series of hammering, banging, and loud cluttering, followed by a loud boom.",
+    "key_phrase": "object hitting surface with loud boom",
+    "statement": "An object hits a surface and is followed by a loud boom.",
+    "question": "Can you hear an object hitting a surface followed by a loud boom?",
+    "command": "Find a object hitting a surface followed by a loud boom.",
+    "indirect": "Would you be able to help locate the sound where an object is hitting a surface, followed by a loud boom?"
+  }
+}
+
+{
+  "audio_id": "7JWHbs3gu1w_180",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A train running on railroad tracks followed by a train horn honking and railroad signal bells chiming",
+    "A hum of a train engine passing with a blowing horn",
+    "A train roars and honks it horn",
+    "A train running on railroad tracks drives by followed by a train whistle blowing and warning signals ringing",
+    "A train running and the horn honking and bells chiming"
+  ],
+  "source_caption": "A train roars and honks it horn",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "7JWHbs3gu1w",
+    "start_time": 180.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A train roars and hums as it runs along the railroad tracks, accompanied by its horn honking or whistle blowing and railroad signal bells chiming or warning signals ringing.",
+    "key_phrase": "train roaring honking horn",
+    "statement": "A train roars as it honks its horn.",
+    "question": "Can you hear a train roaring and honking its horn?",
+    "command": "Find a train roaring and honking its horn.",
+    "indirect": "Would you mind helping me locate the sound where a train roars and honks its horn?"
+  }
+}
+
+{
+  "audio_id": "kOYg4ZtKcAs_0",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A cat meowing briefly",
+    "A cat is meowing",
+    "A small motor vibrating followed by a cat meowing",
+    "A small motor rumbling followed by a cat meowing",
+    "A cat purrs then meows"
+  ],
+  "source_caption": "A small motor vibrating followed by a cat meowing",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "kOYg4ZtKcAs",
+    "start_time": 0.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A small motor vibrates and rumbles, followed by a cat purring and then meowing briefly.",
+    "key_phrase": "small motor vibrating with cat meowing",
+    "statement": "A small motor vibrates, and then a cat meows.",
+    "question": "Can you hear a small motor vibrating followed by a cat meowing?",
+    "command": "Find audio of a small motor vibrating followed by a cat meowing.",
+    "indirect": "If you have a moment, would you be able to help locate the sounds of a small motor vibrating followed by a cat meowing?"
+  }
+}
+
+{
+  "audio_id": "DrCm-HpX67k_180",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Birds are chirping, rustling and thumping are ongoing, a crow caws in the distance, and then four knocks on wood occur",
+    "Wood shuffling and clanking followed by knocking on wood and leaves rustling as wind blows into a microphone and a crow caws in the background",
+    "Opening and closing followed by tapping",
+    "Fabric rustling followed by wood clanking then knocking on a hollow wooden surface as dirt and gravel pour out while crows caw in the background and wind blows into a microphone",
+    "Cracking with some rustling as distant birds chirp"
+  ],
+  "source_caption": "Opening and closing followed by tapping",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "DrCm-HpX67k",
+    "start_time": 180.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Birds are chirping and a crow caws in the distance while wind blows into the microphone, accompanied by ongoing rustling and thumping, wood shuffling and clanking, the opening and closing of an object followed by tapping, fabric rustling, knocking on a hollow wooden surface, cracking sounds, and the pouring of dirt and gravel.",
+    "key_phrase": "door opening closing with tapping",
+    "statement": "Someone opens and closes something and then taps it.",
+    "question": "Can you hear the sound of something being opened and closed, followed by tapping?",
+    "command": "Extract opening and closing followed by tapping.",
+    "indirect": "Would you mind helping to locate the sounds of something being opened and closed, followed by tapping?"
+  }
+}
+
+{
+  "audio_id": "cNARVD02-tw_530",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Male and female speech and then water running",
+    "Two people talking then water running",
+    "A man and an elderly woman talking as plastic clacks followed by a faucet pouring water as water runs down a drain",
+    "A man and woman speak and then water runs",
+    "A man and a woman talking followed by water pouring and draining down a pipe"
+  ],
+  "source_caption": "A man and an elderly woman talking as plastic clacks followed by a faucet pouring water as water runs down a drain",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "cNARVD02-tw",
+    "start_time": 530.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A man and a woman, including an elderly woman, are talking as plastic clacks, followed by the sound of water pouring from a faucet and running down a drain or pipe.",
+    "key_phrase": "man elderly woman talking with plastic clacking faucet pouring water draining",
+    "statement": "A man and an elderly woman are talking while plastic clacks, and then a faucet pours water as the water runs down a drain.",
+    "question": "Can you hear a man and an elderly woman talking, followed by the sound of plastic clacking and then a faucet pouring water as it runs down a drain?",
+    "command": "Extract a man and an elderly woman talking with plastic clacks followed by a faucet pouring water and water running down a drain.",
+    "indirect": "Would you be able to help me locate the sounds of a man and an elderly woman talking, followed by the clacking of plastic, and then the sound of a faucet pouring water as it runs down a drain?"
+  }
+}
+
+{
+  "audio_id": "G0IsabU5hn4_3",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Very strong wind is blowing, and leaves are rustling on the trees",
+    "Strong wind is blowing while leaves are rustling",
+    "Wind blowing heavily into a microphone as ocean waves crash and leaves rustle",
+    "Wind blowing and ocean in the background",
+    "Heavy, continuous wind"
+  ],
+  "source_caption": "Wind blowing heavily into a microphone as ocean waves crash and leaves rustle",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "G0IsabU5hn4",
+    "start_time": 3.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Very strong, continuous wind is blowing heavily, accompanied by leaves rustling on the trees and the sound of ocean waves crashing in the background.",
+    "key_phrase": "heavy wind blowing microphone with crashing ocean waves rustling leaves",
+    "statement": "Wind blows heavily into a microphone while ocean waves crash and leaves rustle.",
+    "question": "Can you hear wind blowing heavily into a microphone along with ocean waves crashing and leaves rustling?",
+    "command": "Extract audio of wind blowing heavily into a microphone as ocean waves crash and leaves rustle.",
+    "indirect": "If you have a moment, would you mind helping to locate the sounds of wind blowing heavily into a microphone, along with ocean waves crashing and leaves rustling?"
+  }
+}
+
+{
+  "audio_id": "_BSmz3SEW1w_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "Rustling pigeons coo",
+    "Birds cooing and rustling",
+    "Pigeons coo and rustle",
+    "A group of pigeons cooing",
+    "Pigeons are making grunting sounds and snapping beaks"
+  ],
+  "source_caption": "Pigeons coo and rustle",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "_BSmz3SEW1w",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A group of pigeons coo and rustle, accompanied by grunting sounds and snapping beaks.",
+    "key_phrase": "pigeons cooing rustling",
+    "statement": "Pigeons are cooing and rustling.",
+    "question": "Can you hear pigeons cooing and rustling?",
+    "command": "Extract pigeons coo and rustle sounds.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of pigeons cooing and rustling?"
+  }
+}
+
+{
+  "audio_id": "--0w1YA1Hm4_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A vehicle driving as a man and woman are talking and laughing",
+    "Men speak and laugh with humming of an engine",
+    "High pitched speaking and laughing",
+    "Humming of an engine with a woman and men speaking",
+    "People talking with the dull roar of a vehicle on the road"
+  ],
+  "source_caption": "High pitched speaking and laughing",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "--0w1YA1Hm4",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A vehicle drives along the road, producing a dull roar and the steady humming of its engine, while a man and a woman, along with other men, speak in high-pitched voices and laugh together.",
+    "key_phrase": "high-pitched speaking laughing",
+    "statement": "Someone is speaking in a high-pitched voice and laughing.",
+    "question": "Is there high-pitched speaking and laughing?",
+    "command": "Find high pitched speaking and laughing audio.",
+    "indirect": "If you have a moment, would you mind helping me locate the audio that features high pitched speaking and laughing?"
+  }
+}
+
+{
+  "audio_id": "S0SQyFXbqF8_30",
+  "dataset": "audiocaps",
+  "dataset_slug": "audiocaps_test",
+  "original_captions": [
+    "A child talking then laughing with a man as an animal gurgles followed by a man talking",
+    "A woman speaking and person laughing followed by some gurgling and squeaking",
+    "A child talking then laughing with a man as an animal gurgles",
+    "Young child speaking with giggling",
+    "An animal gurgling followed by a bell clinking as a kid yells and a man laughs then speaks"
+  ],
+  "source_caption": "A child talking then laughing with a man as an animal gurgles",
+  "metadata": {
+    "split": "test",
+    "youtube_id": "S0SQyFXbqF8",
+    "start_time": 30.0,
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A child is talking and giggling with a man, while an animal gurgles and squeaks, followed by a bell clinking as a kid yells and a man laughs before speaking, all accompanied by a woman speaking and another person laughing.",
+    "key_phrase": "child talking laughing with man animal gurgling",
+    "statement": "A child talks and then laughs with a man while an animal gurgles.",
+    "question": "Can you hear a child talking and then laughing with a man while an animal gurgles?",
+    "command": "Find a child talking then laughing with a man as an animal gurgles.",
+    "indirect": "If you have a moment, would you mind helping me locate the audio where a child is talking and then laughing with a man, while an animal can be heard gurgling?"
+  }
+}

@@ -1,0 +1,699 @@
+{
+  "audio_id": "EaUaOdnw96M_71_3335_81_3335",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent vehicle engine sounds with noticeable background distortion",
+    "Machine-like rumble accompanied by audio interference",
+    "Continuous mechanical noise with poor recording quality"
+  ],
+  "source_caption": "Machine-like rumble accompanied by audio interference",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "EaUaOdnw96M_71_3335_81_3335.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent vehicle engine produces a continuous, machine-like rumble accompanied by noticeable background distortion and audio interference, all marked by poor recording quality.",
+    "key_phrase": "machine rumble with audio interference",
+    "statement": "A machine produces a rumbling sound while audio interference occurs.",
+    "question": "Is there a machine-like rumble accompanied by audio interference?",
+    "command": "Extract machine-like rumble accompanied by audio interference.",
+    "indirect": "If you have a moment, would you be able to help locate the section where a machine-like rumble is accompanied by audio interference?"
+  }
+}
+
+{
+  "audio_id": "1WNEDlCcBCQ_39_86665_49_8666",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Repeated snoring sounds with persistent audio distortion.",
+    "Intermittent snoring accompanied by background interference.",
+    "Distorted audio featuring cyclical snoring patterns."
+  ],
+  "source_caption": "Intermittent snoring accompanied by background interference.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "1WNEDlCcBCQ_39_86665_49_8666.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Cyclical snoring sounds are heard intermittently, accompanied by persistent audio distortion and background interference.",
+    "key_phrase": "intermittent snoring with background interference",
+    "statement": "Someone snores intermittently while background interference can be heard.",
+    "question": "Is there intermittent snoring along with background interference?",
+    "command": "Extract intermittent snoring accompanied by background interference.",
+    "indirect": "Would you mind helping to locate the segments where intermittent snoring can be heard, especially those with some background interference?"
+  }
+}
+
+{
+  "audio_id": "GvGWfiI23Wo_182_733_192_733",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Machine noise with intermittent vehicle sounds and poor audio quality.",
+    "Mechanical hum accompanied by passing vehicles in low-fidelity recording.",
+    "Persistent engine noise with occasional traffic sounds and distortion."
+  ],
+  "source_caption": "Mechanical hum accompanied by passing vehicles in low-fidelity recording.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GvGWfiI23Wo_182_733_192_733.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent mechanical hum is accompanied by intermittent passing vehicle sounds, all captured in a low-fidelity recording with distortion and poor audio quality.",
+    "key_phrase": "mechanical hum with passing vehicles low-fidelity",
+    "statement": "A mechanical hum can be heard while vehicles pass by in a low-fidelity recording.",
+    "question": "Can you hear a mechanical hum along with passing vehicles in this low-fidelity recording?",
+    "command": "Extract mechanical hum accompanied by passing vehicles in low-fidelity recording.",
+    "indirect": "Would you mind helping to locate the audio that features a mechanical hum along with the sound of passing vehicles, as described in a low-fidelity recording?"
+  }
+}
+
+{
+  "audio_id": "H3YXLICCHBE_13_0_23",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Steady machine operation with intermittent mechanical noise",
+    "Continuous industrial machinery sounds with occasional clanking",
+    "Persistent mechanical operation with metallic rattling"
+  ],
+  "source_caption": "Continuous industrial machinery sounds with occasional clanking",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "H3YXLICCHBE_13_0_23.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Steady industrial machinery is operating continuously, accompanied by intermittent mechanical noise, occasional clanking, and persistent metallic rattling.",
+    "key_phrase": "industrial machinery humming with occasional clanking",
+    "statement": "Industrial machinery operates continuously while clanking occurs occasionally.",
+    "question": "Are there continuous industrial machinery sounds with occasional clanking?",
+    "command": "Find continuous industrial machinery sounds with occasional clanking.",
+    "indirect": "If you have a moment, would you be able to help locate the audio that features continuous industrial machinery sounds with occasional clanking?"
+  }
+}
+
+{
+  "audio_id": "2lNrMz63tK0_85_26_95_26",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Sustained vehicle engine operation with persistent mechanical noise.",
+    "Continuous machinery rumble resembling automotive systems.",
+    "Mechanical drone characteristic of running combustion engines."
+  ],
+  "source_caption": "Continuous machinery rumble resembling automotive systems.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "2lNrMz63tK0_85_26_95_26.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A sustained vehicle engine operates with a persistent mechanical noise, producing a continuous machinery rumble and a mechanical drone characteristic of running combustion engines.",
+    "key_phrase": "machinery rumbling automotive-like",
+    "statement": "Machinery rumbles continuously in a manner that resembles automotive systems.",
+    "question": "Is there a continuous machinery rumble that resembles automotive systems?",
+    "command": "Extract continuous machinery rumble resembling automotive systems.",
+    "indirect": "Would you be able to help locate the sound that features a continuous machinery rumble resembling automotive systems?"
+  }
+}
+
+{
+  "audio_id": "3JHsZnFnB3k_239_18_249_18",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Dog barking with distant bell ringing in poor quality recording.",
+    "Canine vocalizations accompanied by faint bell sounds in low-fidelity audio.",
+    "Audible dog barks and metallic ringing with noticeable background distortion."
+  ],
+  "source_caption": "Canine vocalizations accompanied by faint bell sounds in low-fidelity audio.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "3JHsZnFnB3k_239_18_249_18.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A dog is barking accompanied by faint metallic bell ringing, all captured in a low-fidelity recording with noticeable background distortion.",
+    "key_phrase": "dog barking with faint bell sounds low-fidelity audio",
+    "statement": "A dog is vocalizing while faint bell sounds can be heard in the background, and the audio quality is low.",
+    "question": "Can you hear canine vocalizations along with faint bell sounds in the low-fidelity audio?",
+    "command": "Retrieve canine vocalizations accompanied by faint bell sounds in low-fidelity audio.",
+    "indirect": "If you have a moment, would you be able to help locate the audio that features canine vocalizations along with faint bell sounds, even if the recording quality is low?"
+  }
+}
+
+{
+  "audio_id": "GOrLglzY7yY_43_96_53_96",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Rapid firecracker bursts with background distortion",
+    "Repetitive explosive pops amid audio interference",
+    "Sharp pyrotechnic sounds with technical artifacts"
+  ],
+  "source_caption": "Repetitive explosive pops amid audio interference",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GOrLglzY7yY_43_96_53_96.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Rapid, sharp firecracker bursts are exploding repetitively, accompanied by background distortion and audio interference with technical artifacts.",
+    "key_phrase": "explosive pops with audio interference",
+    "statement": "Explosive pops occur repeatedly while audio interference is present.",
+    "question": "Can you hear repetitive explosive pops along with audio interference?",
+    "command": "Extract repetitive explosive pops amid audio interference.",
+    "indirect": "If you wouldn't mind, could you please help locate the section where repetitive explosive pops can be heard amid audio interference?"
+  }
+}
+
+{
+  "audio_id": "0PyCqiHkNoo_136_09949999999998_146_099",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent mechanical rumble with background interference",
+    "Continuous machine noise accompanied by static",
+    "Sustained engine-like sound with audio distortion"
+  ],
+  "source_caption": "Continuous machine noise accompanied by static",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "0PyCqiHkNoo_136_09949999999998_146_099.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent mechanical rumble is heard, accompanied by continuous machine noise and background interference, while sustained engine-like sound blends with static and audio distortion.",
+    "key_phrase": "continuous machine noise with static",
+    "statement": "A machine is making noise continuously while static can also be heard.",
+    "question": "Is there continuous machine noise accompanied by static?",
+    "command": "Extract continuous machine noise accompanied by static.",
+    "indirect": "If you have a moment, would you mind helping me locate the audio that features continuous machine noise accompanied by static?"
+  }
+}
+
+{
+  "audio_id": "0ZSvYN4srv4_167_71_177_71",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Powerful waterfall sounds with crashing surf",
+    "Continuous waterfall noise accompanied by ocean waves",
+    "Sustained rushing water sounds with coastal surf elements"
+  ],
+  "source_caption": "Continuous waterfall noise accompanied by ocean waves",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "0ZSvYN4srv4_167_71_177_71.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A powerful, continuous waterfall crashes steadily, accompanied by the sustained rushing of water and the rhythmic sound of ocean waves and coastal surf.",
+    "key_phrase": "waterfall noise with ocean waves",
+    "statement": "A waterfall makes noise continuously while ocean waves can be heard in the background.",
+    "question": "Is there continuous waterfall noise accompanied by ocean waves?",
+    "command": "Retrieve continuous waterfall noise accompanied by ocean waves.",
+    "indirect": "If you have a moment, would you be able to help locate the audio that features continuous waterfall noise accompanied by ocean waves?"
+  }
+}
+
+{
+  "audio_id": "2twGr6UJajM_30_01665_40_0166",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "A baby laughing with persistent background interference.",
+    "Infant giggles amid low-quality recording artifacts.",
+    "Child's laughter with noticeable audio degradation."
+  ],
+  "source_caption": "Infant giggles amid low-quality recording artifacts.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "2twGr6UJajM_30_01665_40_0166.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A baby is laughing, accompanied by persistent background interference and noticeable audio degradation from low-quality recording artifacts.",
+    "key_phrase": "infant giggling with recording artifacts",
+    "statement": "An infant is giggling while low-quality recording artifacts are present.",
+    "question": "Can you hear an infant giggling along with some low-quality recording artifacts?",
+    "command": "Extract infant giggles amid low-quality recording artifacts.",
+    "indirect": "Would you be able to help me locate the sound of an infant giggling, even though there are some low-quality recording artifacts present?"
+  }
+}
+
+{
+  "audio_id": "H7B1RBaQaMo_21_9853_31_9853",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent vehicle engine sounds with intermittent static interference",
+    "Motorcycle engine noises accompanied by audio distortions",
+    "Mechanical rumbling with periodic signal disruptions"
+  ],
+  "source_caption": "Motorcycle engine noises accompanied by audio distortions",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "H7B1RBaQaMo_21_9853_31_9853.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Persistent vehicle and motorcycle engine noises are rumbling steadily, accompanied by intermittent static interference and periodic audio distortions.",
+    "key_phrase": "motorcycle engine rumbling with audio distortions",
+    "statement": "A motorcycle engine makes noise while audio distortions occur.",
+    "question": "Does the audio feature motorcycle engine noises along with audio distortions?",
+    "command": "Retrieve motorcycle engine noises accompanied by audio distortions.",
+    "indirect": "If you have a moment, would you be able to help locate the sounds of motorcycle engine noises accompanied by audio distortions?"
+  }
+}
+
+{
+  "audio_id": "ABwSvfgXByE_3_9800000000000004_13_98",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Repeated telephone busy signals with intermittent ringing in poor-quality recording.",
+    "Intermittent phone tones and electronic ringing in a low-fidelity audio environment.",
+    "Audible busy signals and telephone rings captured with noticeable technical degradation."
+  ],
+  "source_caption": "Intermittent phone tones and electronic ringing in a low-fidelity audio environment.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "ABwSvfgXByE_3_9800000000000004_13_98.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Repeated telephone busy signals and intermittent electronic ringing are heard in a low-fidelity audio environment, accompanied by noticeable technical degradation.",
+    "key_phrase": "intermittent phone tones electronic ringing low-fidelity audio",
+    "statement": "Phone tones sound intermittently and electronic ringing occurs in the background while the audio environment remains low in fidelity.",
+    "question": "Do you hear intermittent phone tones and electronic ringing in a low-fidelity audio environment?",
+    "command": "Extract intermittent phone tones and electronic ringing in a low-fidelity audio environment.",
+    "indirect": "Would you mind helping to locate the intermittent phone tones and electronic ringing that can be heard in a low-fidelity audio environment?"
+  }
+}
+
+{
+  "audio_id": "2x6uLa4IssU_101_28_111_28",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Sustained vehicle engine drone with muffled background interference.",
+    "Low-frequency mechanical hum accompanied by audio distortions.",
+    "Continuous automotive noise with degraded recording quality."
+  ],
+  "source_caption": "Low-frequency mechanical hum accompanied by audio distortions.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "2x6uLa4IssU_101_28_111_28.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A sustained vehicle engine drone is heard, accompanied by a low-frequency mechanical hum and muffled background interference, while continuous automotive noise persists with audio distortions and degraded recording quality.",
+    "key_phrase": "low-frequency mechanical hum with audio distortions",
+    "statement": "A low-frequency mechanical hum occurs while audio distortions are also present.",
+    "question": "Is there a low-frequency mechanical hum accompanied by audio distortions?",
+    "command": "Extract low-frequency mechanical hum accompanied by audio distortions.",
+    "indirect": "If you have a moment, would you mind helping to locate the low-frequency mechanical hum that is accompanied by audio distortions?"
+  }
+}
+
+{
+  "audio_id": "G0vAFMyLbGg_12_839999999999998_22_84",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Continuous emergency siren with significant audio distortion.",
+    "Persistent civil defense alarm with heavy signal interference.",
+    "Sustained warning siren exhibiting substantial audio degradation."
+  ],
+  "source_caption": "Persistent civil defense alarm with heavy signal interference.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "G0vAFMyLbGg_12_839999999999998_22_84.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A continuous emergency siren is blaring, accompanied by significant audio distortion, heavy signal interference, and substantial audio degradation throughout.",
+    "key_phrase": "civil defense alarm with heavy signal interference",
+    "statement": "A civil defense alarm sounds persistently while heavy signal interference is present.",
+    "question": "Is there a persistent civil defense alarm with heavy signal interference?",
+    "command": "Retrieve persistent civil defense alarm with heavy signal interference.",
+    "indirect": "If you have a moment, would you be able to help locate the audio that features a persistent civil defense alarm with heavy signal interference?"
+  }
+}
+
+{
+  "audio_id": "GgUUt6VPaHE_43_6653_53_6653",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent mechanical rumble with vehicle-like rhythms",
+    "Steady industrial humming resembling transport machinery",
+    "Continuous engine-like noise with metallic resonance"
+  ],
+  "source_caption": "Steady industrial humming resembling transport machinery",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GgUUt6VPaHE_43_6653_53_6653.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent mechanical rumble with vehicle-like rhythms is heard, accompanied by a steady industrial humming resembling transport machinery and a continuous engine-like noise with metallic resonance.",
+    "key_phrase": "steady industrial humming resembling transport machinery",
+    "statement": "A steady industrial humming occurs, resembling the sound made by transport machinery.",
+    "question": "Is there a steady industrial humming sound that resembles transport machinery?",
+    "command": "Extract steady industrial humming resembling transport machinery.",
+    "indirect": "Would you be able to help locate a sound that features a steady industrial humming, similar to that of transport machinery?"
+  }
+}
+
+{
+  "audio_id": "GPqb5HO00AE_81_4197_91_4197",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "A vehicle engine running with persistent background distortion.",
+    "Mechanical engine noise accompanied by audible interference.",
+    "Continuous machinery operation with distorted background."
+  ],
+  "source_caption": "Mechanical engine noise accompanied by audible interference.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GPqb5HO00AE_81_4197_91_4197.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A vehicle engine is running continuously, producing mechanical noise accompanied by persistent background distortion and audible interference.",
+    "key_phrase": "mechanical engine noise with audible interference",
+    "statement": "A mechanical engine produces noise while audible interference can be heard.",
+    "question": "Is there mechanical engine noise along with audible interference?",
+    "command": "Extract mechanical engine noise accompanied by audible interference.",
+    "indirect": "If you have a moment, could you please help locate the mechanical engine noise along with the audible interference described?"
+  }
+}
+
+{
+  "audio_id": "GHFDPJnZwRw_0_18850000000000033_10_1885",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent clock ticking with intermittent static interference.",
+    "Rhythmic ticking noise accompanied by background disturbances.",
+    "Mechanical clock sounds with occasional audio artifacts."
+  ],
+  "source_caption": "Rhythmic ticking noise accompanied by background disturbances.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GHFDPJnZwRw_0_18850000000000033_10_1885.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent, rhythmic ticking of a mechanical clock is heard, accompanied by intermittent static interference and occasional audio artifacts in the background.",
+    "key_phrase": "rhythmic ticking noise with background disturbances",
+    "statement": "A rhythmic ticking noise occurs while background disturbances can be heard.",
+    "question": "Can you hear a rhythmic ticking noise along with background disturbances?",
+    "command": "Extract rhythmic ticking noise accompanied by background disturbances.",
+    "indirect": "If you don't mind, could you please help locate the audio that features a rhythmic ticking noise along with some background disturbances?"
+  }
+}
+
+{
+  "audio_id": "FxAIF6tBBIo_135_9565_145_957",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Dog barking and panting with persistent background distortion",
+    "Persistent dog vocalizations amid audio interference",
+    "Canine barking and panting with noticeable static"
+  ],
+  "source_caption": "Persistent dog vocalizations amid audio interference",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "FxAIF6tBBIo_135_9565_145_957.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A dog is barking and panting persistently, accompanied by noticeable static and background audio interference.",
+    "key_phrase": "dog vocalizing with audio interference",
+    "statement": "A dog is vocalizing persistently while audio interference can be heard in the background.",
+    "question": "Can you hear persistent dog vocalizations despite audio interference?",
+    "command": "Extract persistent dog vocalizations amid audio interference.",
+    "indirect": "If you have a moment, would you be able to help locate the persistent dog vocalizations that are present amid the audio interference?"
+  }
+}
+
+{
+  "audio_id": "2Z8V0mQsafY_32_559999999999995_42_56",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Repetitive fireworks bursts with distorted audio characteristics",
+    "Rhythmic pyrotechnic explosions exhibiting sound degradation",
+    "Successive firework detonations accompanied by audio distortion"
+  ],
+  "source_caption": "Rhythmic pyrotechnic explosions exhibiting sound degradation",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "2Z8V0mQsafY_32_559999999999995_42_56.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Successive, rhythmic fireworks bursts are detonating, accompanied by distorted and degraded audio characteristics.",
+    "key_phrase": "rhythmic pyrotechnic explosions exhibiting sound degradation",
+    "statement": "Pyrotechnic explosions occur rhythmically while their sounds degrade over time.",
+    "question": "Do you hear rhythmic pyrotechnic explosions with noticeable sound degradation?",
+    "command": "Retrieve rhythmic pyrotechnic explosions exhibiting sound degradation.",
+    "indirect": "Would you be able to help locate the sounds of rhythmic pyrotechnic explosions that exhibit sound degradation?"
+  }
+}
+
+{
+  "audio_id": "GRwxparuTss_305_725_315_725",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Loud explosive bursts with sustained reverberation in poor-quality recording.",
+    "Reverberant firework-like detonations amid low-fidelity audio.",
+    "Sharp concussive noises echoing in degraded acoustic environment."
+  ],
+  "source_caption": "Reverberant firework-like detonations amid low-fidelity audio.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "GRwxparuTss_305_725_315_725.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Loud, sharp explosive bursts and concussive firework-like detonations are echoing with sustained reverberation amid a poor-quality, low-fidelity recording.",
+    "key_phrase": "reverberant firework-like detonations in low-fidelity audio",
+    "statement": "Firework-like detonations reverberate in the recording while the audio quality remains low-fidelity.",
+    "question": "Can you hear reverberant firework-like detonations in the low-fidelity audio?",
+    "command": "Extract reverberant firework-like detonations amid low-fidelity audio.",
+    "indirect": "If you have a moment, would you be able to help locate the sounds of reverberant firework-like detonations, especially as they appear in low-fidelity audio?"
+  }
+}
+
+{
+  "audio_id": "ExyoJ3El8n8_16_62575_26_6258",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent wind interference dominates low-quality outdoor recording",
+    "Strong microphone wind noise obscures outdoor audio environment",
+    "Continuous wind distortion characterizes degraded field recording"
+  ],
+  "source_caption": "Strong microphone wind noise obscures outdoor audio environment",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "ExyoJ3El8n8_16_62575_26_6258.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Persistent wind interference dominates the low-quality outdoor recording, producing strong microphone wind noise that obscures the audio environment, while continuous wind distortion characterizes the degraded field recording.",
+    "key_phrase": "microphone wind noise obscuring outdoor audio",
+    "statement": "Strong wind blows into the microphone and obscures the sounds of the outdoor environment.",
+    "question": "Is strong microphone wind noise obscuring the outdoor audio environment?",
+    "command": "Extract outdoor audio environment with strong microphone wind noise.",
+    "indirect": "Would you be able to help locate the sounds from the outdoor audio environment that are being obscured by strong microphone wind noise?"
+  }
+}
+
+{
+  "audio_id": "HKdnHnG07As_414_1_424_1",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent vehicle engine sounds with brief horn blast in low-quality recording",
+    "Continuous automotive noise interrupted by short horn honk in distorted audio",
+    "Engine rumble with momentary warning toot captured through poor-quality microphone"
+  ],
+  "source_caption": "Continuous automotive noise interrupted by short horn honk in distorted audio",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "HKdnHnG07As_414_1_424_1.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent engine rumble is heard as continuous automotive noise, briefly interrupted by a short horn honk or warning toot, all captured through a low-quality, distorted microphone recording.",
+    "key_phrase": "continuous automotive noise with short horn honk in distorted audio",
+    "statement": "Automotive noise continues in the audio while a short horn honks and the sound is distorted.",
+    "question": "Is there continuous automotive noise that is interrupted by a short horn honk in distorted audio?",
+    "command": "Extract continuous automotive noise interrupted by short horn honk in distorted audio.",
+    "indirect": "Would you be able to help locate the segment where there is continuous automotive noise that is interrupted by a short horn honk, even though the audio may be somewhat distorted?"
+  }
+}
+
+{
+  "audio_id": "FesaaWIYnbA_2_2_12_2",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Sawing wood with metallic swooshing sounds in poor quality recording.",
+    "Mechanical cutting noises with swishing artifacts in low-fidelity audio.",
+    "Wood sawing activity captured through distorted whooshing sounds."
+  ],
+  "source_caption": "Mechanical cutting noises with swishing artifacts in low-fidelity audio.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "FesaaWIYnbA_2_2_12_2.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Wood is being sawed, producing metallic swooshing and mechanical cutting noises accompanied by swishing and whooshing artifacts, all captured in a poor quality, low-fidelity, and distorted recording.",
+    "key_phrase": "mechanical cutting swishing artifacts low-fidelity audio",
+    "statement": "Mechanical cutting noises occur while swishing artifacts are present in the low-fidelity audio.",
+    "question": "Are there mechanical cutting noises with swishing artifacts in low-fidelity audio?",
+    "command": "Extract mechanical cutting noises with swishing artifacts in low-fidelity audio.",
+    "indirect": "If you have a moment, would you be able to help locate audio that features mechanical cutting noises along with swishing artifacts, particularly in low-fidelity recordings?"
+  }
+}
+
+{
+  "audio_id": "FiciN4LF7WU_170_9725_180_972",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Persistent vehicle engine noise with muffled audio quality.",
+    "Continuous machinery rumble in low-fidelity recording.",
+    "Sustained engine sound with distorted acoustic characteristics."
+  ],
+  "source_caption": "Continuous machinery rumble in low-fidelity recording.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "FiciN4LF7WU_170_9725_180_972.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A persistent vehicle engine noise is heard, accompanied by a continuous machinery rumble and sustained engine sound, all with muffled, distorted, low-fidelity audio quality.",
+    "key_phrase": "machinery rumbling low-fidelity",
+    "statement": "Machinery rumbles continuously in a low-fidelity recording.",
+    "question": "Can you hear a continuous machinery rumble in this low-fidelity recording?",
+    "command": "Extract continuous machinery rumble in low-fidelity recording.",
+    "indirect": "Would you be able to help locate the audio that features a continuous machinery rumble in a low-fidelity recording?"
+  }
+}
+
+{
+  "audio_id": "CbCI0BYANYU_87_81665_97_8166",
+  "dataset": "mecat",
+  "dataset_slug": "mecat_test",
+  "original_captions": [
+    "Sustained mechanical rushing water with persistent background distortion.",
+    "Continuous machine-like water noise accompanied by audio interference.",
+    "Steady hydraulic sounds with noticeable recording imperfections."
+  ],
+  "source_caption": "Continuous machine-like water noise accompanied by audio interference.",
+  "metadata": {
+    "split": "test",
+    "domain": "00A",
+    "json_file": "CbCI0BYANYU_87_81665_97_8166.json",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Continuous machine-like rushing water is heard, accompanied by persistent background distortion and noticeable recording imperfections.",
+    "key_phrase": "machine-like water noise with audio interference",
+    "statement": "A machine produces water noise continuously while audio interference occurs at the same time.",
+    "question": "Is there a continuous machine-like water noise along with audio interference?",
+    "command": "Extract continuous machine-like water noise accompanied by audio interference.",
+    "indirect": "If you have a moment, would you mind helping to locate the continuous machine-like water noise that is accompanied by audio interference?"
+  }
+}

@@ -1,0 +1,10 @@
+[INFO] Query types: command, indirect, full_caption
+[INFO] Using start-word candidate count range: 3-15
+[INFO] Loading records from input/audiocaps/val.csv
+[INFO] Using dataset loader: audiocaps
+[INFO] Loaded 495 unique audio_id groups
+[INFO] Prepared 495 entries.
+[INFO] Generating command for 495 entries
+[INFO] Generating indirect for 495 entries
+[INFO] Generating full_caption for 495 entries
+[INFO] EQ generation complete. Produced 1485 outputs.

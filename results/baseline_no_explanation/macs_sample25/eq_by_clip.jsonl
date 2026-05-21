@@ -1,0 +1,736 @@
+{
+  "audio_id": "airport-london-205-6187-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "indistinctive background hum with mumbled adult talk and a female adult talking loudly at the end",
+    "adults talking and someone screaming to the mike",
+    "adults talking and somebody shouting",
+    "people talking followed by footsteps and the announcement and then woman shouting",
+    "people chattering and arguing at an airport lounge"
+  ],
+  "source_caption": "adults talking and somebody shouting",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-london-205-6187-a.wav",
+    "file_name": "airport-london-205-6187-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking and chattering with indistinct background hum, accompanied by occasional arguing, footsteps, and a loud female adult shouting or making an announcement at the end, while someone screams or shouts into the microphone.",
+    "key_phrase": "adults talking with person shouting",
+    "statement": "Adults are talking while somebody is shouting.",
+    "question": "Can you hear adults talking and somebody shouting?",
+    "command": "Find audio clips of adults talking and somebody shouting.",
+    "indirect": "Would you be able to help locate the part where adults are talking and someone is shouting?"
+  }
+}
+
+{
+  "audio_id": "park-vienna-105-3010-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "birds are singing outside over the wind",
+    "birds are singing and traffic noise in the background",
+    "birds singing and humming noise in the background",
+    "bird sings and distant traffic hums",
+    "birds singing from the beginning"
+  ],
+  "source_caption": "birds singing and humming noise in the background",
+  "metadata": {
+    "split": "test",
+    "filename": "park-vienna-105-3010-a.wav",
+    "file_name": "park-vienna-105-3010-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Birds are singing outside from the beginning, accompanied by the sound of wind and a distant humming traffic noise in the background.",
+    "key_phrase": "birds singing with background humming",
+    "statement": "Birds are singing while a humming noise is present in the background.",
+    "question": "Can you hear birds singing and a humming noise in the background?",
+    "command": "Extract birds singing and humming noise in the background.",
+    "indirect": "If you don't mind, could you please help me find the audio that features birds singing along with a humming noise in the background?"
+  }
+}
+
+{
+  "audio_id": "public_square-prague-1075-41468-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults talking far away someone is pulling luggage nearby followed by children noise",
+    "people walking and dragging luggage while loud speaking in the background and child talks",
+    "people are talking in the background a person is walking from right to center while rolling something on wheels a child starts talking",
+    "people talking and cheering then a child talking also dragging of suitcase etc",
+    "loud children and adult voices as wheels of a some kind of suitcase roll on a cobblestone path"
+  ],
+  "source_caption": "people are talking in the background a person is walking from right to center while rolling something on wheels a child starts talking",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-prague-1075-41468-a.wav",
+    "file_name": "public_square-prague-1075-41468-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking and cheering in the background while loud children's voices and the steady rolling of a suitcase on a cobblestone path accompany someone walking from right to center.",
+    "key_phrase": "person walking right to center rolling wheeled object with background people talking and child talking",
+    "statement": "People are talking in the background while a person walks from right to center and rolls something on wheels, and a child starts talking.",
+    "question": "Can you hear people talking in the background, a person walking from right to center while rolling something on wheels, and a child starting to talk?",
+    "command": "Extract people talking in the background a person walking from right to center while rolling something on wheels and a child starting to talk.",
+    "indirect": "Would you mind helping to locate the sounds where people are talking in the background, a person is walking from right to center while rolling something on wheels, and a child starts talking?"
+  }
+}
+
+{
+  "audio_id": "park-paris-100-2850-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "outdoor with birds and wind",
+    "people are talking while the wind blows",
+    "people talking near a calm street",
+    "wind blows and some distance speech"
+  ],
+  "source_caption": "people talking near a calm street",
+  "metadata": {
+    "split": "test",
+    "filename": "park-paris-100-2850-a.wav",
+    "file_name": "park-paris-100-2850-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "People are talking near a calm street while the wind blows outdoors, accompanied by distant birdsong and faint speech in the background.",
+    "key_phrase": "people talking on calm street",
+    "statement": "People are talking near a street that remains calm.",
+    "question": "Can you hear people talking near a calm street?",
+    "command": "Find people talking near a calm street.",
+    "indirect": "Would you mind helping to locate the sounds of people talking near a calm street?"
+  }
+}
+
+{
+  "audio_id": "park-barcelona-90-2478-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "water splashes near and machine beeping in the distance",
+    "birds are singing and a child is talking with a machine sound in the background followed by a loud noise",
+    "traffic outside with birds singing and a few talking sounds"
+  ],
+  "source_caption": "birds are singing and a child is talking with a machine sound in the background followed by a loud noise",
+  "metadata": {
+    "split": "test",
+    "filename": "park-barcelona-90-2478-a.wav",
+    "file_name": "park-barcelona-90-2478-a.wav",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Water splashes nearby as birds are singing and a child is talking, accompanied by distant machine beeping and machine sounds in the background, while traffic passes outside and a loud noise follows.",
+    "key_phrase": "birds singing child talking machine background loud noise",
+    "statement": "Birds are singing while a child is talking and a machine is making noise in the background, and this is followed by a loud noise.",
+    "question": "Can you hear birds singing and a child talking with a machine sound in the background, followed by a loud noise?",
+    "command": "Extract birds singing, child talking with machine sound in the background, and loud noise.",
+    "indirect": "Would you mind helping to locate the part where birds are singing, a child is talking with a machine sound in the background, and then a loud noise follows?"
+  }
+}
+
+{
+  "audio_id": "park-stockholm-246-7335-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "far away the traffic noise with birds singing close by",
+    "birds singing with traffic and police sirens in the distance",
+    "birds are singing on the left also some vehicle is approaching from the left",
+    "birds singing and traffic hum a siren far away",
+    "a loud engine sound and some bird singing"
+  ],
+  "source_caption": "birds are singing on the left also some vehicle is approaching from the left",
+  "metadata": {
+    "split": "test",
+    "filename": "park-stockholm-246-7335-a.wav",
+    "file_name": "park-stockholm-246-7335-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Birds are singing, accompanied by the hum of distant traffic and occasional police sirens, while at times a loud engine sound or an approaching vehicle can be heard from the left.",
+    "key_phrase": "birds singing left with approaching vehicle",
+    "statement": "Birds are singing on the left while a vehicle is also approaching from the left.",
+    "question": "Can you hear birds singing on the left and a vehicle approaching from the left?",
+    "command": "Extract audio of birds singing on the left and vehicle approaching from the left.",
+    "indirect": "If you have a moment, would you be able to help locate the sounds where birds are singing on the left and a vehicle is approaching from the left?"
+  }
+}
+
+{
+  "audio_id": "public_square-paris-251-7514-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults and children walking and talking with beeping sound in the background",
+    "footsteps going away and child making sounds",
+    "a person walking and sounds of a small child further away",
+    "someone walking by with the traffic sound around"
+  ],
+  "source_caption": "a person walking and sounds of a small child further away",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-paris-251-7514-a.wav",
+    "file_name": "public_square-paris-251-7514-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults and children are walking and talking while footsteps move away, accompanied by a child making sounds further in the distance, with beeping and traffic sounds in the background.",
+    "key_phrase": "person walking with distant child sounds",
+    "statement": "A person is walking while the sounds of a small child can be heard further away.",
+    "question": "Can you hear a person walking along with the sounds of a small child further away?",
+    "command": "Find a person walking and sounds of a small child further away.",
+    "indirect": "If you have a moment, would you mind helping to locate the sounds of a person walking along with the more distant sounds of a small child?"
+  }
+}
+
+{
+  "audio_id": "park-helsinki-242-7185-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "a bird is singing and people are talking in the background",
+    "man talking bird singing",
+    "men talking to each other birds singing in the background humming sound coming from an industrial ventilation system and constant buzzing sound",
+    "people talking in a park-like space"
+  ],
+  "source_caption": "men talking to each other birds singing in the background humming sound coming from an industrial ventilation system and constant buzzing sound",
+  "metadata": {
+    "split": "test",
+    "filename": "park-helsinki-242-7185-a.wav",
+    "file_name": "park-helsinki-242-7185-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Men are talking to each other in a park-like space while birds are singing in the background, accompanied by a humming sound from an industrial ventilation system and a constant buzzing.",
+    "key_phrase": "men talking with birds singing, industrial ventilation humming, constant buzzing",
+    "statement": "Men are talking to each other while birds are singing in the background, and a humming sound is coming from an industrial ventilation system while a buzzing sound continues constantly.",
+    "question": "Can you hear men talking to each other, birds singing in the background, a humming sound from an industrial ventilation system, and a constant buzzing sound?",
+    "command": "Extract men talking to each other, birds singing in the background, humming sound coming from an industrial ventilation system, and constant buzzing sound.",
+    "indirect": "Would you be able to help locate the audio that features men talking to each other, with birds singing in the background, as well as a humming sound from an industrial ventilation system and a constant buzzing sound?"
+  }
+}
+
+{
+  "audio_id": "airport-lisbon-1122-41394-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "footsteps passing by a kid yelling at the beginning people talk in the background",
+    "a lot of walking noises a girl speaking man talking traffic noises",
+    "adults talking in the background the woman walking with heels and a sound of a train braking",
+    "sounds of a busy street"
+  ],
+  "source_caption": "adults talking in the background the woman walking with heels and a sound of a train braking",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-lisbon-1122-41394-a.wav",
+    "file_name": "airport-lisbon-1122-41394-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Footsteps pass by as a kid yells at the beginning, accompanied by a lot of walking noises and the distinct sound of a woman walking with heels, while a girl and a man speak among adults talking in the background, all set against the sounds of traffic, a train braking, and the general bustle of a busy street.",
+    "key_phrase": "woman walking in heels with adults talking background and train braking",
+    "statement": "Adults are talking in the background while a woman is walking in heels and a train is braking.",
+    "question": "Can you hear adults talking in the background, a woman walking in heels, and the sound of a train braking?",
+    "command": "Extract adults talking in the background the woman walking with heels and a sound of a train braking.",
+    "indirect": "Would you be able to help locate the audio that features adults talking in the background, a woman walking in heels, and the sound of a train braking?"
+  }
+}
+
+{
+  "audio_id": "public_square-barcelona-108-3095-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "big crowd talking noise distant middle eastern styled singing",
+    "sound of people and children in a public market with a vague singing sound  background",
+    "people are talking while a band is playing",
+    "adults talking with music playing in the background"
+  ],
+  "source_caption": "people are talking while a band is playing",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-barcelona-108-3095-a.wav",
+    "file_name": "public_square-barcelona-108-3095-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A big crowd of adults and children is talking in a public market, accompanied by distant Middle Eastern styled singing and background music played by a band.",
+    "key_phrase": "people talking with band playing",
+    "statement": "People are talking while a band is playing in the background.",
+    "question": "Can you hear people talking while a band is playing?",
+    "command": "Find people talking while a band is playing.",
+    "indirect": "Would you mind helping to locate the audio where people are talking while a band is playing?"
+  }
+}
+
+{
+  "audio_id": "airport-prague-1173-45032-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults talk in an indoor environment",
+    "people talking all around",
+    "adults are talking in a crowded place",
+    "lots of speech no footsteps",
+    "adults walking and talking in crowded places"
+  ],
+  "source_caption": "adults are talking in a crowded place",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-prague-1173-45032-a.wav",
+    "file_name": "airport-prague-1173-45032-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking in a crowded indoor environment, with speech filling the space all around and no footsteps audible.",
+    "key_phrase": "adults talking crowded place",
+    "statement": "Adults are talking while other people are creating background noise in a crowded place.",
+    "question": "Can you hear adults talking in a crowded place?",
+    "command": "Find adults talking in a crowded place.",
+    "indirect": "Would you be able to help locate the sounds of adults talking in a crowded place?"
+  }
+}
+
+{
+  "audio_id": "park-stockholm-103-2918-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "a person walking and birds making noise",
+    "continuous footsteps and in distance bird is cawing",
+    "a group of people walking and in the halfway child shouts and  the end bird sings",
+    "footsteps outdoors distant adults talking and children screaming birds chirping",
+    "someone is walking on the street with the singing of birds and crying sound of children"
+  ],
+  "source_caption": "a group of people walking and in the halfway child shouts and  the end bird sings",
+  "metadata": {
+    "split": "test",
+    "filename": "park-stockholm-103-2918-a.wav",
+    "file_name": "park-stockholm-103-2918-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A group of people is walking outdoors on the street, accompanied by continuous footsteps, distant adults talking, children shouting and crying, while birds caw, chirp, and sing in the background.",
+    "key_phrase": "people walking with child shouting, bird singing",
+    "statement": "A group of people are walking, and halfway through, a child shouts while at the end, a bird sings.",
+    "question": "Can you hear a group of people walking, a child shouting halfway through, and a bird singing at the end?",
+    "command": "Find a group of people walking with a child shouting halfway and a bird singing at the end.",
+    "indirect": "If you have a moment, would you mind helping to locate the sounds where a group of people are walking, followed by a child shouting halfway through, and then a bird singing at the end?"
+  }
+}
+
+{
+  "audio_id": "airport-barcelona-203-6123-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "birds singing and adults talking and laughing",
+    "adults laughing and talking with high pitch traffic noise",
+    "a bird is singing as a lot of people talk",
+    "the sound of people talking and walking",
+    "birds singing adults talking and laughing"
+  ],
+  "source_caption": "a bird is singing as a lot of people talk",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-barcelona-203-6123-a.wav",
+    "file_name": "airport-barcelona-203-6123-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Birds are singing as adults talk and laugh, accompanied by the high-pitched noise of traffic and the sound of people walking.",
+    "key_phrase": "bird singing with crowd talking",
+    "statement": "A bird is singing while many people are talking.",
+    "question": "Can you hear a bird singing while a lot of people are talking?",
+    "command": "Find a bird singing with a lot of people talking.",
+    "indirect": "If you have a moment, would you mind helping to locate the sound where a bird is singing while a lot of people are talking?"
+  }
+}
+
+{
+  "audio_id": "public_square-paris-116-3388-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "children making noise with walking sounds of leaves at the front",
+    "a child shouting in the distance while someone is taking a few steps trough the grass",
+    "birds singing almost un-audibly but a child voice is clear to hear at the mid to the end",
+    "adults talking children voices heard the sound of soft footsteps heard towards the end"
+  ],
+  "source_caption": "birds singing almost un-audibly but a child voice is clear to hear at the mid to the end",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-paris-116-3388-a.wav",
+    "file_name": "public_square-paris-116-3388-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Children's voices and occasional shouts are clearly heard as they make noise and walk through leaves and grass, accompanied by the faint singing of birds and the soft footsteps of adults and children, with the footsteps becoming more noticeable towards the end.",
+    "key_phrase": "child voice with faint birds singing",
+    "statement": "Birds are singing almost inaudibly while a child's voice becomes clear from the middle to the end.",
+    "question": "Can you hear birds singing very quietly while a child's voice becomes clear from the middle to the end?",
+    "command": "Extract birds singing almost un-audibly and clear child voice from mid to end.",
+    "indirect": "Would you be able to help locate the section where birds are singing very softly, but the child's voice becomes clear from the middle to the end?"
+  }
+}
+
+{
+  "audio_id": "park-paris-100-2824-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "there are birds singing and the sound of traffic",
+    "birds singing in traffic noise",
+    "indistinctive noises in the background",
+    "a bird is singing with regular pace",
+    "far away vehicles are heard moving fast"
+  ],
+  "source_caption": "indistinctive noises in the background",
+  "metadata": {
+    "split": "test",
+    "filename": "park-paris-100-2824-a.wav",
+    "file_name": "park-paris-100-2824-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A bird is singing at a regular pace, accompanied by the sound of traffic and indistinctive noises in the background, while far away vehicles are heard moving fast.",
+    "key_phrase": "indistinct background noises",
+    "statement": "Some indistinct noises can be heard in the background.",
+    "question": "Are there indistinctive noises in the background?",
+    "command": "Find indistinctive noises in the background.",
+    "indirect": "If you don't mind, could you please help locate the indistinctive noises in the background?"
+  }
+}
+
+{
+  "audio_id": "airport-london-205-6224-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adult talking and the woman laughs",
+    "starts with an impact sound and has a woman laughing at the end",
+    "many people talking with some laughter in the background"
+  ],
+  "source_caption": "starts with an impact sound and has a woman laughing at the end",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-london-205-6224-a.wav",
+    "file_name": "airport-london-205-6224-a.wav",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "An impact sound starts the scene as many people are talking with some laughter in the background, and a woman laughs at the end.",
+    "key_phrase": "impact sound with woman laughing ending",
+    "statement": "The audio starts with a sound of impact and ends with a woman laughing.",
+    "question": "Does it start with an impact sound and end with a woman laughing?",
+    "command": "Find audio clips that start with an impact sound and have a woman laughing at the end.",
+    "indirect": "Would you mind helping me locate the audio that begins with an impact sound and features a woman laughing at the end?"
+  }
+}
+
+{
+  "audio_id": "airport-paris-7-307-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults talking in a barber shop",
+    "walking and talking and buzzing at the end",
+    "many adult voices and rattling",
+    "just normal ripple of conversation",
+    "people walk and talk and there an electronic buzzer right at the end"
+  ],
+  "source_caption": "many adult voices and rattling",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-paris-7-307-a.wav",
+    "file_name": "airport-paris-7-307-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are engaged in a steady ripple of conversation and walking around in a barber shop, accompanied by the rattling of objects and culminating in the sound of an electronic buzzer at the end.",
+    "key_phrase": "adult voices with rattling",
+    "statement": "Several adults are speaking while something is rattling.",
+    "question": "Can you hear many adult voices and rattling?",
+    "command": "Extract many adult voices and rattling.",
+    "indirect": "Would you be able to help locate the sounds where there are many adult voices along with some rattling?"
+  }
+}
+
+{
+  "audio_id": "airport-milan-1089-41726-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "people talking motor noise something clashes softly",
+    "several people are talking and something is creaking",
+    "people talking few quiet footsteps cough unrecognizable voice near the microphone",
+    "quiet footsteps and a conversation",
+    "traffic noise and people talking and walking"
+  ],
+  "source_caption": "people talking few quiet footsteps cough unrecognizable voice near the microphone",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-milan-1089-41726-a.wav",
+    "file_name": "airport-milan-1089-41726-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Several people are talking while quiet footsteps move about, accompanied by occasional motor and traffic noise, a soft clashing sound, creaking, a cough, and an unrecognizable voice near the microphone.",
+    "key_phrase": "people talking with quiet footsteps cough unrecognizable voice near microphone",
+    "statement": "People are talking while a few quiet footsteps can be heard, and someone coughs as an unrecognizable voice speaks near the microphone.",
+    "question": "Can you hear people talking, a few quiet footsteps, a cough, and an unrecognizable voice near the microphone?",
+    "command": "Extract people talking, few quiet footsteps, cough, and unrecognizable voice near the microphone.",
+    "indirect": "If you have a moment, would you mind helping to locate the sounds of people talking, a few quiet footsteps, a cough, and an unrecognizable voice near the microphone?"
+  }
+}
+
+{
+  "audio_id": "public_square-milan-1014-44089-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults are talking in a traffic noise",
+    "music played near a road and a car honk",
+    "an instrument sound at the beginning footsteps and a car horn sound at the end",
+    "a city center with cars people and ads",
+    "people talking in a noisy street"
+  ],
+  "source_caption": "an instrument sound at the beginning footsteps and a car horn sound at the end",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-milan-1014-44089-a.wav",
+    "file_name": "public_square-milan-1014-44089-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking while music and instrument sounds play near a busy city center filled with cars, people, and ads, accompanied by footsteps and car horns amid ongoing traffic noise.",
+    "key_phrase": "instrument sound with footsteps beginning car horn ending",
+    "statement": "An instrument plays at the beginning while footsteps are heard, and a car horn sounds at the end.",
+    "question": "Does the audio start with an instrument sound and end with footsteps and a car horn?",
+    "command": "Extract an instrument sound at the beginning footsteps and a car horn sound at the end.",
+    "indirect": "If you have a moment, could you please help locate the instrument sound at the beginning, as well as the footsteps and the car horn sound at the end?"
+  }
+}
+
+{
+  "audio_id": "airport-vienna-209-6383-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "adults are talking over the sounds of cutlery clattering with a child crying far away",
+    "unknown sounds while baby crying in the background",
+    "children voices adults talking and an unknown clacking sound",
+    "people walking and talking and a child screams",
+    "random rustling noises with a child yelling shortly"
+  ],
+  "source_caption": "children voices adults talking and an unknown clacking sound",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-vienna-209-6383-a.wav",
+    "file_name": "airport-vienna-209-6383-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking and people are walking as cutlery clatters, accompanied by children’s voices and a child crying or yelling in the background, while unknown clacking and rustling noises occur.",
+    "key_phrase": "children voices with adults talking and unknown clacking",
+    "statement": "Children are speaking while adults are talking, and an unknown clacking sound can be heard.",
+    "question": "Can you hear children's voices, adults talking, and an unknown clacking sound?",
+    "command": "Extract children voices adults talking and an unknown clacking sound.",
+    "indirect": "If you have a moment, would you mind helping to locate the sounds of children’s voices, adults talking, and an unknown clacking sound?"
+  }
+}
+
+{
+  "audio_id": "park-london-95-2670-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "a person walks at the park while birds are singing in the background",
+    "two people walking by while birds are chirping and dog barking far away",
+    "a very quiet environment somebody walking by on the gravel",
+    "one set of footsteps birds chirping a dog barked once in the distance and a man talking far away",
+    "bird singing sounds with footstep sounds"
+  ],
+  "source_caption": "a very quiet environment somebody walking by on the gravel",
+  "metadata": {
+    "split": "test",
+    "filename": "park-london-95-2670-a.wav",
+    "file_name": "park-london-95-2670-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A person walks by on gravel in a very quiet park, accompanied by the sounds of birds singing and chirping, while a dog barks once and a man talks in the distance.",
+    "key_phrase": "quiet environment gravel-walking footsteps",
+    "statement": "Somebody is walking by on the gravel while the environment remains very quiet.",
+    "question": "Can you hear someone walking by on the gravel in a very quiet environment?",
+    "command": "Find a very quiet environment with somebody walking by on the gravel.",
+    "indirect": "If you have a moment, could you please help locate the sound of somebody walking by on gravel in a very quiet environment?"
+  }
+}
+
+{
+  "audio_id": "airport-prague-1173-44800-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "the ambient sound of people talking traffic and something being moved",
+    "adults talking and furniture moved twice with a wheel screeching followed by coughing",
+    "people are talking she squeaks someone is coughing and chair is moved",
+    "people talking in a spacious environment",
+    "people talking and there is also some gabble from further away"
+  ],
+  "source_caption": "people are talking she squeaks someone is coughing and chair is moved",
+  "metadata": {
+    "split": "test",
+    "filename": "airport-prague-1173-44800-a.wav",
+    "file_name": "airport-prague-1173-44800-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Adults are talking in a spacious environment, accompanied by distant gabble, while furniture and a chair are moved with a wheel screeching and squeaking, and someone coughs amid the ambient sounds of traffic.",
+    "key_phrase": "people talking, woman squeaking, person coughing, chair moving",
+    "statement": "People are talking while she is squeaking, and someone is coughing and moving a chair.",
+    "question": "Can you hear people talking, a woman squeaking, someone coughing, and a chair being moved?",
+    "command": "Extract people talking, squeaking sound from her, someone coughing, and chair being moved.",
+    "indirect": "Would you be able to help locate the parts where people are talking, a person squeaks, someone is coughing, and a chair is being moved?"
+  }
+}
+
+{
+  "audio_id": "park-prague-1092-41410-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "extremely quiet car noise some liquid dipping",
+    "sound of birds in a park with sound of traffic and siren in the background",
+    "a motorcycle rides in traffic and a bird occasionally chirps",
+    "cars driving far away and birds singing in the background",
+    "car-engines rumbling in the distance"
+  ],
+  "source_caption": "a motorcycle rides in traffic and a bird occasionally chirps",
+  "metadata": {
+    "split": "test",
+    "filename": "park-prague-1092-41410-a.wav",
+    "file_name": "park-prague-1092-41410-a.wav",
+    "caption_count": 5
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "Distant car engines rumble and cars drive far away, accompanied by the occasional motorcycle riding through traffic, while birds sing and occasionally chirp in the background, with faint sounds of a siren and some liquid dripping.",
+    "key_phrase": "motorcycle riding in traffic with occasional bird chirping",
+    "statement": "A motorcycle is riding in traffic while a bird is chirping occasionally.",
+    "question": "Can you hear a motorcycle riding in traffic while a bird occasionally chirps?",
+    "command": "Extract a motorcycle riding in traffic and occasional bird chirping.",
+    "indirect": "If you have a moment, would you mind helping me locate the sounds of a motorcycle riding in traffic along with the occasional chirping of a bird?"
+  }
+}
+
+{
+  "audio_id": "park-london-95-2649-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "birds singing a person walking away",
+    "a person is briefly walks by while birds are chirping and persons chatting",
+    "someone walks by while people are talking and birds are chirping followed by an airplane passes by"
+  ],
+  "source_caption": "a person is briefly walks by while birds are chirping and persons chatting",
+  "metadata": {
+    "split": "test",
+    "filename": "park-london-95-2649-a.wav",
+    "file_name": "park-london-95-2649-a.wav",
+    "caption_count": 3
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A person briefly walks by while birds are chirping and people are chatting, followed by the sound of an airplane passing by.",
+    "key_phrase": "person walking by with birds chirping, people chatting",
+    "statement": "A person walks by briefly while birds are chirping and people are chatting.",
+    "question": "Can you hear a person briefly walking by while birds are chirping and people are chatting?",
+    "command": "Extract a person briefly walking by with birds chirping and persons chatting.",
+    "indirect": "Would you mind helping to locate the moment when a person briefly walks by, with birds chirping and people chatting in the background?"
+  }
+}
+
+{
+  "audio_id": "public_square-barcelona-108-3114-a",
+  "dataset": "macs",
+  "dataset_slug": "macs_test",
+  "original_captions": [
+    "a machine used in a noisy place",
+    "a crowd of people talking with digital beeps play",
+    "someone entering a pin code in a store",
+    "people chatting and their voices echoing a beeping noise coming from something"
+  ],
+  "source_caption": "someone entering a pin code in a store",
+  "metadata": {
+    "split": "test",
+    "filename": "public_square-barcelona-108-3114-a.wav",
+    "file_name": "public_square-barcelona-108-3114-a.wav",
+    "caption_count": 4
+  },
+  "source_model": "gpt-4.1-2025-04-14",
+  "regen_model": "gpt-4.1-2025-04-14",
+  "generated_queries": {
+    "full_caption": "A machine is operating in a noisy place as a crowd of people chat, their voices echoing, while digital beeps play and someone enters a pin code in a store.",
+    "key_phrase": "person entering pin code store",
+    "statement": "Someone is entering a pin code in a store.",
+    "question": "Can you hear someone entering a pin code in a store?",
+    "command": "Find someone entering a pin code in a store.",
+    "indirect": "Would you mind helping to locate the sound of someone entering a pin code in a store?"
+  }
+}
