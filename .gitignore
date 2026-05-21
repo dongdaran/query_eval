@@ -11,6 +11,7 @@ env/
 .codex
 
 # Project outputs and generated artifacts
+results/baseline_no_explanation/
 output/
 temp/
 eval.jsonl
